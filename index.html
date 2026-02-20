@@ -1,31 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Archive Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Brantley Hall - Media Archive</title>
+    <style>
+        /* Updated to Royal Blue and Aqua Palette */
+        body { font-family: 'Helvetica', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f0f4f8; color: #1a2a3a; }
+        
+        header { 
+            background-color: #4169E1; /* Royal Blue */
+            color: white; 
+            padding: 3rem 1rem; 
+            text-align: center; 
+            border-bottom: 6px solid #00FFFF; /* Aqua Accent */
+        }
+        
+        .container { max-width: 900px; margin: 3rem auto; background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h2 { color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 2rem; }
+        
+        .story { margin-bottom: 3rem; border-bottom: 1px solid #e1e8ed; padding-bottom: 2rem; }
+        .story:last-child { border-bottom: none; }
+
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        /* Interactive Aqua Links */
+        a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
+        a:hover { color: #008b8b; border-bottom: 2px solid #00FFFF; }
+        
+        .badge { background-color: #00FFFF; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Media Archive</h1>
+        <h1>Publicity Archive</h1>
+        <p>The Human Flatus Atlas & Smart Underwear Project</p>
     </header>
-    <main>
-        <section>
-            <h2>Featured Media</h2>
-            <p>Explore our collection of media items below.</p>
+    
+    <div class="container">
+        <section class="story">
+            <span class="badge">Viral Feature</span>
+            <h2>📺 The Late Show with Stephen Colbert</h2>
+            <p>The "Smart Underwear" project reached a global audience on February 19, 2026, during the 'Sound of Science' segment.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/d_aeNUgLGwM" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
-        <section>
-            <h2>Recent Additions</h2>
-            <ul>
-                <li><a href="#">Media Item 1</a></li>
-                <li><a href="#">Media Item 2</a></li>
-                <li><a href="#">Media Item 3</a></li>
+
+        <section class="story">
+            <h2>📰 Featured Articles</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;">
+                    <strong>AOL News:</strong> <a href="#">A "Fart Atlas"? Why the World is Signing Up for Smart Underwear</a>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>Gizmodo:</strong> <a href="#">The Science of Gut Health Gets a Wearable Upgrade</a>
+                </li>
             </ul>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Human Flatus Atlas. All rights reserved.</p>
-    </footer>
+    </div>
 </body>
 </html>
