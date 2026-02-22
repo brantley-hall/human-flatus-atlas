@@ -31,7 +31,7 @@
         a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
         a:hover { color: #008b8b; border-bottom: 2px solid #00FFFF; }
         
-        .badge { background-color: #00FFFF; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin: 0 10px 10px 0; display: inline-block; }
+        .badge { background-color: #00FFFF; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -41,110 +41,165 @@
     </header>
     
     <div class="container">
-        <!-- Featured Video - Stephen Colbert -->
-        <div style="background-color: #f0f8ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #4169E1;">
-            <h3 style="color: #4169E1; margin-top: 0;">📺 The Late Show with Stephen Colbert</h3>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">February 19, 2026</p>
-            <span class="badge">Smart Underwear joke at 3:04</span>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/d_aeNUgLGwM" frameborder="0" allowfullscreen></iframe>
+        <section class="story">
+            <h2>📺 Featured Multimedia</h2>
+            
+            <!-- Featured Video - Stephen Colbert -->
+            <div style="background-color: #f0f8ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #4169E1;">
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">February 19, 2026</p>
+                <span class="badge">Smart Underwear joke at 3:04</span>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/d_aeNUgLGwM" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
+        </section>
 
         <section class="story">
-            <h2> Breaking News</h2>
+            <h2>📰 Breaking News</h2>
+            <!-- Wall Street Journal -->
             <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
                 <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">📈 Wall Street Journal</h3>
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">February 20, 2026</p>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">February 20, 2026</p>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Joanna Stern</p>
                 
-                <!-- Small box across both columns -->
                 <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1" target="_blank" style="font-size: 1.1rem; color: #1a5490;">It's Called 'Fitbit for Farts'—and It's No Joke</a></strong>
+                    <strong><a href="https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1" target="_blank" style="font-size: 1.1rem; color: #1a5490;">It's Called the 'Fitbit for Farts'—and It's No Joke</a></strong>
+                    <p style="color: #666; font-size: 0.9rem; margin: 8px 0 0 0;">Scientists developing a new underwear-able hope to do for gastroenterology what the Apple Watch did for cardiology</p>
                 </div>
                 
                 <div style="font-style: italic; color: #333; font-size: 0.9rem; line-height: 1.5; text-align: left;">
-                    <p style="margin: 0 0 10px 0;">"Scientists developing a new underwear-able hope to do for gastroenterology what the Apple Watch did for cardiology."</p>
-                    <p style="margin: 0;">"The groundbreaking smart underwear technology aims to revolutionize how we monitor and understand gut health through continuous flatulence measurement."</p>
+                    <p style="margin: 0;">"As I type this, a battery-powered computer tucked in my, er, swimsuit area is monitoring for my next flatus. Yes, flatus means 'fart.' Don't judge me—it's for science."</p>
                 </div>
             </div>
             
             <!-- Forbes Story -->
             <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
                 <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">💰 Forbes</h3>
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">February 15 2026</p>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">February 15, 2026</p>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Bruce Lee</p>
                 
-                <!-- Small box across both columns -->
                 <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Smart Underwear Finds People Fart More Often Than Previously Thought</a></strong>
+                    <strong><a href="https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">'Smart Underwear' Finds People Fart More Often Than Previously Thought</a></strong>
                 </div>
                 
                 <div style="font-style: italic; color: #333; font-size: 0.9rem; line-height: 1.5; text-align: left;">
-                    <p style="margin: 0 0 10px 0;">"Leading scientists develop wearable technology to monitor digestive health and establish baseline for flatulence research."</p>
-                    <p style="margin: 0;">"The innovative device aims to provide objective data that could help doctors treat patients suffering from excessive gas issues."</p>
+                    <p style="margin: 0;">"Did you get wind of what that new fart study found—you know the one recently published in the journal Biosensors and Bioelectronics: X? Well, participants in the study farted on average 32 times a day, which is significantly higher than the 10 to 20 times a day that farters had self-reported in previous studies. In other words, this breaking wind news suggests that you may be more of a private tooter each day than you realize."</p>
                 </div>
             </div>
             
             <!-- Major Features Section -->
             <h2 style="color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 3rem;">📰 Major Features</h2>
             
-            <!-- New York Times + Smithsonian Magazine Side by Side -->
+            <!-- Smithsonian Magazine (1-column, always first) -->
+            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
+                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">🏛️ Smithsonian Magazine</h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">February 15, 2026</p>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Theresa Machemer</p>
+                
+                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                    <strong><a href="https://www.smithsonianmag.com/smart-news/how-many-times-a-day-do-you-fart-this-smart-underwear-can-keep-track-and-figuring-out-a-baseline-is-important-for-science-180988198/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track, Because Figuring Out a Baseline Is Important for Science</a></strong>
+                </div>
+                
+                <div style="font-style: italic; color: #333; font-size: 0.9rem; line-height: 1.5; text-align: left;">
+                    <p style="margin: 0;">"How many times do you fart a day? It sounds like the sort of question a little brother and his friends might ask while barely holding back laughter. Studying flatulence has medical value, however, and measuring how frequently someone passes gas is harder than you might expect."</p>
+                </div>
+            </div>
+            
+            <!-- Wareable + The Sunday Guardian Side by Side -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
-                <!-- Smithsonian Magazine -->
+                <!-- Wareable -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🏛️ Smithsonian Magazine</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 15, 2026</p>
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">⌚ Wareable</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Wareable Staff</p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.smithsonianmag.com/smart-news/how-many-times-a-day-do-you-fart-this-smart-underwear-can-keep-track-and-figuring-out-a-baseline-is-important-for-science-180988198/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track</a></strong>
+                        <strong><a href="https://www.wareable.com/health-and-wellbeing/smart-underwear-wearable-flatus-atlas-study-university-maryland" target="_blank" style="font-size: 0.9rem; color: #1a5490;">This smart underwear wearable offers a window into gut metabolism</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"How many times do you fart a day? It sounds like the sort of question a little brother and his friends might ask while barely holding back laughter. Studying flatulence has medical value, however, and measuring how frequently someone passes gas is harder than you might expect."</p>
+                        <p style="margin: 0;">"Scientists at the University of Maryland have developed a first-of-its-kind wearable designed to monitor intestinal gas production. Lead researcher Dr. Brantley Hall likens the technology to a Continuous Glucose Monitor (CGM) for the gut."</p>
+                    </div>
+                </div>
+                
+                <!-- The Sunday Guardian -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🇬🇧 The Sunday Guardian</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 12, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Sunday Guardian Staff</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.sundayguardian.com/lifestyle/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Smart underwear finds people fart more often than previously thought</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"A new study using 'smart underwear' has revealed that people fart significantly more often than previously thought, with participants averaging 32 farts per day—nearly double previous estimates."</p>
                     </div>
                 </div>
             </div>
             
-            <!-- The Independent Feature -->
-            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490; margin-bottom: 20px;">
-                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🌐 The Independent</h3>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 2026</p>
-                
-                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://www.the-independent.com/news/science/smart-underwear-tracks-fart-metabolism-b2919610.html" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Smart Underwear Tracks Fart Metabolism in Real Time</a></strong>
+            <!-- USA Today + CBC As It Happens Side by Side -->
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <!-- New York Post -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🗞️ New York Post</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 10, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Rachel Sacks</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://nypost.com/2026/02/10/health/we-fart-twice-as-much-as-previously-thought-scientists-discover-from-new-smart-underwear/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">We fart twice as much as previously thought, scientists discover from new 'smart underwear'</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"Let 'er rip? While breaking wind could help protect against Alzheimer's and postpartum depression, there can be too much of a 'good' thing. Scientists recently discovered that we're passing gas a lot more often than previously thought, thanks to some smarty underpants."</p>
+                    </div>
                 </div>
                 
-                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                    <p style="margin: 0;">"Scientists have developed smart underwear that can track flatulence in real time, providing unprecedented data on intestinal gas production and gut microbiome activity during ordinary digestion."</p>
+                <!-- Everyday Health -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🏥 Everyday Health</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Erica Sweeney & Tom Gavin</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.everydayhealth.com/digestive-health/what-your-daily-fart-count-could-say-about-your-health/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">What Your Daily Fart Count Could Say About Your Health</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"Researchers determined that people fart an average of 32 times a day, twice as much as previously thought. This knowledge could enhance our understanding of the gut microbiome in ways that go beyond flatulence."</p>
+                    </div>
                 </div>
             </div>
             
-            <!-- Scientific American + Nautilus Side by Side -->
+            <!-- The Independent + Scientific American Side by Side -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <!-- The Independent -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🇬🇧 The Independent</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Vishwam Sankaran</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.the-independent.com/news/science/smart-underwear-tracks-fart-metabolism-b2919610.html" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists develop smart underwear to track how often people fart – the results are surprising</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"Device could have serious applications for tracking a range of health issues, including irritable bowel syndrome and food intolerance. The results are surprising - healthy adults produce an average of 32 farts per day, double previous estimates."</p>
+                    </div>
+                </div>
+                
                 <!-- Scientific American -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🔬 Scientific American</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 9, 2026</p>
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">� Scientific American</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 9, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Andrew Zaleski</p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.scientificamerican.com/article/how-often-does-the-average-person-fart-scientists-built-a-device-to-find-out/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">'Smart Underwear' Could Help Unlock Secrets of Human Flatulence</a></strong>
+                        <strong><a href="https://www.scientificamerican.com/article/how-often-does-the-average-person-fart-scientists-built-a-device-to-find-out/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">'Smart Underwear' could help unlock secrets of human flatulence</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"Whether you're breaking wind, farting hard or just letting out a quick toot, flatulence is—as much a daily necessity as breathing. But exactly how often the average person lets one rip and what that says about their body is something of a mystery."</p>
-                    </div>
-                </div>
-                
-                <!-- Nautilus -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🧭 Nautilus</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 11, 2026</p>
-                    
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://nautil.us/new-smart-underwear-unlocks-the-serious-science-of-human-flatulence-1267183/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">New Smart Underwear Unlocks the Serious Science of Human Flatulence</a></strong>
-                    </div>
-                    
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"We've got smart rings, smart watches, and now … smart underwear. It was developed by a team of researchers led by biologist Brantly Hall of University of Maryland in form of a small device equipped with electrochemical sensors that can clip directly onto your underwear."</p>
+                        <p style="margin: 0;">"The device brings the study of farts 'into the 21st century,' the researchers say. Up until now, studying flatulence meant either asking people to count their own farts—which doesn't work well—or bringing them into a clinical setting and using extremely invasive techniques like rectal tubes."</p>
                     </div>
                 </div>
             </div>
@@ -154,118 +209,110 @@
                 <!-- Medical Xpress -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🏥 Medical Xpress</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 10, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 10, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Bob Yirka</p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://medicalxpress.com/news/2026-02-scientists-smart-underwear-human-flatulence.html" target="_blank" style="font-size: 0.9rem; color: #1a5490;">First Wearable Device Measures Human Flatulence</a></strong>
+                        <strong><a href="https://medicalxpress.com/news/2026-02-scientists-smart-underwear-human-flatulence.html" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists create 'smart underwear' to measure human flatulence</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"Scientists at the University of Maryland have created Smart Underwear, the first wearable device designed to measure human flatulence."</p>
+                        <p style="margin: 0;">"Scientists at the University of Maryland have created Smart Underwear, the first wearable device designed to measure human flatulence. By tracking hydrogen in flatus, the device helps scientists revisit long-standing assumptions about how often people actually fart. It also opens a new window into measuring gut microbial metabolism in everyday life."</p>
                     </div>
                 </div>
                 
-                <!-- EurekAlert! -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🚨 EurekAlert!</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 10, 2026</p>
-                    
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.eurekalert.org/news-releases/1115965" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists Create 'Smart Underwear' to Measure Human Flatulence</a></strong>
-                    </div>
-                    
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"Scientists at the University of Maryland have created Smart Underwear, the first wearable device designed to measure human flatulence."</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ACSH + Earth.com Side by Side -->
-            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- ACSH -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🏥 American Council on Science and Health</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 12, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 12, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Alex Berezow</p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.acsh.org/news/2026/02/12/university-maryland-toots-out-beauty-smart-underwear-measures-your-farts-49967" target="_blank" style="font-size: 0.9rem; color: #1a5490;">University of Maryland Toots Out a Beauty: Smart Underwear Measures Your Farts</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"If only it were April 1st... But what follows is real. Scientists at University of Maryland have created Smart Underwear, the first wearable device designed to measure human flatulence."</p>
-                    </div>
-                </div>
-                
-                <!-- Earth.com -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🌍 Earth.com</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 18, 2026</p>
-                    
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.earth.com/news/smart-underwear-measures-how-often-humans-fart-hoping-to-better-track-overall-gut-health/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Smart Underwear Measures How Often Humans Fart, Hoping to Better Track Overall Gut Health</a></strong>
-                    </div>
-                    
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"The fart and the complaint of excess gas are not always the same thing, but both have long puzzled doctors. It's awkward, easy to joke about, and usually brushed aside in polite conversation. Yet every fart is a measurable biological event."</p>
+                        <p style="margin: 0;">"Some breakthroughs change humanity forever. Others, not so much. This one clips discreetly onto your underwear and monitors how often you fart – the status of your flatus. And no, it's not April Fool's Day. If only it were April 1st... But what follows is real."</p>
                     </div>
                 </div>
             </div>
             
-            <!-- UNILAD + ZME Science Side by Side -->
+            <!-- USA Today + CBC As It Happens Side by Side -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
-                <!-- UNILAD -->
+                <!-- USA Today -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">📺 UNILAD</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 13, 2026</p>
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">📰 USA Today</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Karissa Waddick</p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.uniladtech.com/science/news/scientists-develop-smart-underwear-track-regularly-fart-075313-20260213" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists Develop Smart Underwear to Track How Regularly People Fart and It's Not What You'd Expect</a></strong>
+                        <strong><a href="https://www.usatoday.com/story/life/health-wellness/2026/02/18/excessive-gas-fart-flatulence-study/88725694007/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists use 'Smart Underwear' to study how much people fart</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"Experts have developed a new technology that will track how regularly people actually fart. Yep, scientists have unveiled new 'smart underwear' that gives us never before known insight into how human metabolism works."</p>
+                        <p style="margin: 0;">"Whether you call it breaking wind, sounding the trumpet, or cutting the cheese, everyone farts. But how much gas is too much? The short answer: no one knows – yet. Scientists at the University of Maryland are aiming to answer that question in a new nationwide study."</p>
                     </div>
                 </div>
                 
-                <!-- ZME Science -->
+                <!-- CBC As It Happens -->
                 <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🔬 ZME Science</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 18, 2026</p>
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🇨🇦 CBC "As It Happens"</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">CBC Radio Staff</p>
+                    <span class="badge">search transcript for: flatulence underwear</span>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.zmescience.com/medicine/scientists-made-smart-underwear-that-tracks-your-farts-in-real-time/" target="_blank" style="font-size: 0.9rem; color: #1a5490;">Scientists Made Smart Underwear That Tracks Your Farts in Real Time</a></strong>
+                        <strong><a href="https://www.cbc.ca/radio/asithappens/the-aih-transcript-for-february-13-2026-9.7093324" target="_blank" style="font-size: 0.9rem; color: #1a5490;">The AIH Transcript For February 13, 2026</a></strong>
                     </div>
                     
                     <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
-                        <p style="margin: 0;">"In the ordinary course of digestion, the human gut breaks down food, sustains trillions of microbes, and produces intestinal gas in ways that have remained difficult to measure scientifically."</p>
+                        <p style="margin: 0;">"Canada's national radio program covers the University of Maryland's Smart Underwear research, bringing international attention to the groundbreaking study that found people fart 32 times per day on average."</p>
                     </div>
                 </div>
             </div>
             
-            <!-- News Services -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #4169E1;">
-                <h3 style="color: #4169E1; margin-top: 0;">📡 News Services</h3>
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">View detailed coverage from major news services that distributed our story nationwide:</p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="cnn-wire.html" style="display: inline-block; padding: 12px 20px; background-color: #cc0000; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-bottom: 10px; transition: all 0.3s;">
-                        📰 CNN Service
-                    </a>
-                    <a href="aol-wire.html" style="display: inline-block; padding: 12px 20px; background-color: #ff6600; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-bottom: 10px; transition: all 0.3s;">
-                        📰 AOL Service
-                    </a>
-                    <a href="msn-wire.html" style="display: inline-block; padding: 12px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-bottom: 10px; transition: all 0.3s;">
-                        📰 MSN Service
-                    </a>
-                </div>
-            <!-- Additional Media Coverage -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #4169E1;">
-                <h3 style="color: #4169E1; margin-top: 0;">📰 Additional Media Coverage</h3>
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Explore complete media coverage from all outlets and platforms:</p>
-                <div style="text-align: center;">
-                    <a href="additional-media-coverage.html" style="display: inline-block; padding: 12px 20px; background-color: #00FFFF; color: #1a2a3a; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 5px; transition: all 0.3s;">
-                        � Complete Coverage Archive
-                    </a>
-                </div>
+            </section>
+
+        <section class="story">
+            <h2>⚡ Quick Hits</h2>
+            
+            <div style="display: flex; justify-content: center; gap: 12px; margin: 20px 0; flex-wrap: wrap;">
+                <a href="cnn-hits.html" style="display: block; background-color: #cc0000; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background-color 0.3s; min-width: 160px;">
+                    📺 CNN News Service
+                </a>
+                
+                <a href="local-twists.html" style="display: block; background-color: #ff6b6b; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background-color 0.3s; min-width: 160px;">
+                    🎬 Local Twists
+                </a>
+                
+                <a href="other-featured.html" style="display: block; background-color: #28a745; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background-color 0.3s; min-width: 160px;">
+                    🌐 Global Coverage
+                </a>
+                
+                <a href="feature-archive.html" style="display: block; background-color: #6c757d; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background-color 0.3s; min-width: 160px;">
+                    📚 Feature Archive
+                </a>
+            </div>
+        </section>
+
+        <section class="story">
+            <h2>🔬 Research Foundation</h2>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <!-- Science Direct Journal Article -->
+                <a href="https://www.sciencedirect.com/science/article/pii/S0956566325000349" target="_blank" style="display: block; background-color: #4169E1; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: background-color 0.3s; min-width: 180px;">
+                    📄 Journal Article
+                </a>
+                
+                <!-- Human Flatus Atlas Website -->
+                <a href="https://humanflatusatlas.org" target="_blank" style="display: block; background-color: #008b8b; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: background-color 0.3s; min-width: 180px;">
+                    🌐 Flatus Atlas
+                </a>
+                
+                <!-- Maryland Today Story -->
+                <a href="https://today.umd.edu/smart-underwear-farts-research" target="_blank" style="display: block; background-color: #1a5490; color: white; text-align: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: background-color 0.3s; min-width: 180px;">
+                    📰 Maryland Today
+                </a>
             </div>
         </section>
     </div>
