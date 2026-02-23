@@ -39,7 +39,7 @@ The article places Smart Underwear research in the context of:
 ## Related Coverage
 
 - [Wall Street Journal](wsj-smart-underwear.md) - Business/tech perspective
-- [Smithsonian Magazine](smithsonian.md) - Additional science coverage
+- [Nautilus](nautilus-smart-underwear.md) - Science communication
 - [Major Features Index](../README.md#major-features)
 
 ## Research Notes
