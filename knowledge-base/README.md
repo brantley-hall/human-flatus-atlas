@@ -30,6 +30,7 @@ All files in this knowledge base are:
 - [CNN Newsource Coverage Map](articles/cnn-coverage.md)
 - [Case Western Comments on Brantley Hall](articles/case-western-comments.md)
 - [Smartbit Facebook Meme](articles/smartbit-meme.md)
+- [Facebook Big Screen Display](articles/facebook-big-screen.md)
 
 ---
 
