@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Brantley Hall - Media Archive</title>
+    <title>[LOCAL 3] Human Flatus Atlas - Media Archive</title>
+    <meta name="theme-color" content="#6f42c1">
     <style>
         /* Updated to Royal Blue and Aqua Palette */
         body { font-family: 'Helvetica', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f0f4f8; color: #1a2a3a; }
@@ -27,12 +28,13 @@
 
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .video-container iframe[width] { position: relative; width: 100%; height: auto; max-width: 560px; margin: 0 auto; display: block; }
         
         /* Interactive Aqua Links */
         a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
         a:hover { color: #008b8b; border-bottom: 2px solid #00FFFF; }
         
-        .badge { background-color: #00FFFF; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+        .badge, span.badge { background: linear-gradient(135deg, #6BB6E8, #40E0D0) !important; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; margin-left: 10px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -43,21 +45,39 @@
     </header>
     
     <div class="container">
+        
         <section class="story">
             <h2>📺 Featured Multimedia</h2>
             
-            <!-- Featured Video - Stephen Colbert -->
-            <div style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #4169E1;">
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 19, 2026</p>
-                <span class="badge">Smart Underwear joke at 3:04</span>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/d_aeNUgLGwM" frameborder="0" allowfullscreen></iframe>
+            <!-- Stephen Colbert Video -->
+            <div style="background-color: #f0f8ff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #4169E1;">
+                <h3 style="color: #4169E1; margin-top: 0; font-size: 1.5rem; font-weight: bold;">🎺 Stephen Colbert</h3>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 19, 2026</p>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">Late Night TV</p>
+                
+                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #4169E1;">
+                    <strong><a href="https://www.youtube.com/watch?v=d_aeNUgLGwM&t=1s" target="_blank" style="font-size: 1.1rem; color: #4169E1;">Smart Underwear joke at 3:04</a></strong>
+                </div>
+                
+                <div style="text-align: center; margin: 15px 0;">
+                    <a href="https://www.youtube.com/watch?v=d_aeNUgLGwM&t=1s" target="_blank" style="display: inline-block;">
+                        <img src="knowledge-base/media/Colbert-Screen.png" 
+                             alt="Stephen Colbert - Smart Underwear joke at 3:04" 
+                             style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;">
+                    </a>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        <strong>📺 Click to watch on YouTube</strong>
+                    </p>
+                </div>
+                
+                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
+                    <p style="margin: 0;">"Stephen Colbert features the Smart Underwear research in his monologue, bringing science to late-night television audience."</p>
                 </div>
             </div>
         </section>
-
+        
         <section class="story">
-            <h2>📰 Breaking News</h2>
+            <h2>� Breaking News</h2>
             <!-- Wall Street Journal -->
             <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
                 <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">📈 Wall Street Journal</h3>
@@ -100,54 +120,136 @@
                 </div>
             </div>
             
-            <!-- Forbes Story -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
-                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">💰 Forbes</h3>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 15, 2026</p>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Bruce Lee</p>
-                
-                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">'Smart Underwear' Finds People Fart More Often Than Previously Thought</a></strong>
+            <!-- Straits Times Breaking News -->
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
+                <!-- Straits Times Screenshot - Left Side Full Height -->
+                <div style="position: absolute; top: 20px; bottom: 20px; left: 20px; width: 45%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                    <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
+                        📸 Straits Times
+                    </div>
+                    <div style="flex: 1; overflow: hidden; position: relative;">
+                        <img src="knowledge-base/media/The Straits Times.png" 
+                             alt="Straits Times website screenshot" 
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             loading="lazy">
+                    </div>
                 </div>
                 
-                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                    <p style="margin: 0;">"Did you get wind of what that new fart study found—you know the one recently published in the journal Biosensors and Bioelectronics: X? Well, participants in the study farted on average 32 times a day, which is significantly higher than the 10 to 20 times a day that farters had self-reported in previous studies. In other words, this breaking wind news suggests that you may be more of a private tooter each day than you realize."</p>
+                <!-- Text Content - Right Side -->
+                <div style="padding-left: 50%;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">🇸🇬 Straits Times</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Eileen Ng <span class="badge">Top English Newspaper in Singapore</span></p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Fart for a cause: US researchers develop 'smart underwear' that tracks farts to explore gut health</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
+                        <p style="margin: 0;">"Wanted: People who fart. A 'smart underwear' to measure human flatulence has been created by scientists from University of Maryland in the United States, and they are looking for volunteers to wear it."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- The Verge Breaking News -->
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
+                <!-- Text Content - Left Side -->
+                <div style="padding-right: 45%;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">📱 The Verge</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">Gadgets Section <span class="badge">Major Tech Publication</span></p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.theverge.com/gadgets/882910/fartbit-a-fitbit-for-farts" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Researchers at the University of Maryland built a Fartbit, a Fitbit for farts</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
+                        <p style="margin: 0;">"The team is constructing the Human Flatus Atlas, bringing modern wearable monitors to bear on digestive health, measuring the frequency and intensity of farts. The team even had to create an artificial butt that could pass gas on command while developing the prototype."</p>
+                    </div>
+                </div>
+                
+                <!-- The Verge Screenshot - Right Side Full Height -->
+                <div style="position: absolute; top: 20px; bottom: 20px; right: 20px; width: 40%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                    <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
+                        📸 The Verge
+                    </div>
+                    <div style="flex: 1; overflow: hidden; position: relative;">
+                        <img src="knowledge-base/media/verge-screenshot.png" 
+                             alt="The Verge website screenshot" 
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             loading="lazy">
+                    </div>
                 </div>
             </div>
             
             <!-- Major Features Section -->
             <h2 style="color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 3rem;">📰 Major Features</h2>
             
-            <!-- Smithsonian Magazine (1-column, always first) -->
-            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
-                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">🏛️ Smithsonian Magazine</h3>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 15, 2026</p>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Theresa Machemer</p>
-                
-                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://www.smithsonianmag.com/smart-news/how-many-times-a-day-do-you-fart-this-smart-underwear-can-keep-track-and-figuring-out-a-baseline-is-important-for-science-180988198/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track, Because Figuring Out a Baseline Is Important for Science</a></strong>
+            <!-- Forbes (1-column) - MOVED TO TOP -->
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
+                <!-- Forbes Screenshot - Left Side Full Height -->
+                <div style="position: absolute; top: 20px; bottom: 20px; left: 20px; width: 45%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                    <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
+                        📸 Forbes
+                    </div>
+                    <div style="flex: 1; overflow: hidden; position: relative;">
+                        <img src="knowledge-base/media/Forbes-Snippet.png" 
+                             alt="Forbes website screenshot" 
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             loading="lazy">
+                    </div>
                 </div>
                 
-                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                    <p style="margin: 0;">"How many times do you fart a day? It sounds like the sort of question a little brother and his friends might ask while barely holding back laughter. Studying flatulence has medical value, however, and measuring how frequently someone passes gas is harder than you might expect."</p>
+                <!-- Text Content - Right Side -->
+                <div style="padding-left: 50%;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">💰 Forbes</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 15, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Bruce Lee</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">'Smart Underwear' Finds People Fart More Often Than Previously Thought</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
+                        <p style="margin: 0;">"Did you get wind of what that new fart study found—you know the one recently published in the journal Biosensors and Bioelectronics: X? Well, participants in the study farted on average 32 times a day, which is significantly higher than the 10 to 20 times a day that farters had self-reported in previous studies. In other words, this breaking wind news suggests that you may be more of a private tooter each day than you realize."</p>
+                    </div>
                 </div>
             </div>
             
-            <!-- Nautilus (1-column) -->
-            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
-                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">🧭 Nautilus</h3>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 11, 2026</p>
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Jake Currie</p>
-                
-                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                    <strong><a href="https://nautil.us/new-smart-underwear-unlocks-the-serious-science-of-human-flatulence-1267183/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">New Smart Underwear Unlocks the Serious Science of Human Flatulence</a></strong>
+            <!-- Smithsonian + Nautilus Side by Side -->
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <!-- Smithsonian Magazine -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🏛️ Smithsonian Magazine</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 15, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Theresa Machemer</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.smithsonianmag.com/smart-news/how-many-times-a-day-do-you-fart-this-smart-underwear-can-keep-track-and-figuring-out-a-baseline-is-important-for-science-180988198/" target="_blank" style="font-size: 0.8rem; color: #1a5490;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"How many times do you fart a day? Studying flatulence has medical value, however, and measuring how frequently someone passes gas is harder than you might expect."</p>
+                    </div>
                 </div>
                 
-                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                    <p style="margin: 0;">"We've got smart rings, smart watches, and now … smart underwear."</p>
+                <!-- Nautilus -->
+                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #1a5490;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🧭 Nautilus</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 11, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Jake Currie</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://nautil.us/new-smart-underwear-unlocks-the-serious-science-of-human-flatulence-1267183/" target="_blank" style="font-size: 0.8rem; color: #1a5490;">New Smart Underwear Unlocks the Serious Science of Human Flatulence</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #323; font-size: 0.8rem; line-height: 1.4;">
+                        <p style="margin: 0;">"We've got smart rings, smart watches, and now … smart underwear."</p>
+                    </div>
                 </div>
             </div>
             
+                        
             <!-- Wareable + The Sunday Guardian Side by Side -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- Wareable -->
@@ -302,7 +404,7 @@
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🇨🇦 CBC "As It Happens"</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">CBC Radio Staff</p>
-                    <span class="badge">search transcript for: flatulence underwear</span>
+                    <span class="badge">search for: brantley hall</span>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.cbc.ca/radio/asithappens/the-aih-transcript-for-february-13-2026-9.7093324" target="_blank" style="font-size: 0.8rem; color: #1a5490;">The AIH Transcript For February 13, 2026</a></strong>
@@ -320,8 +422,6 @@
         </section>
 
         <section class="story">
-            <h2>⚡ Quick Hits</h2>
-            
             <div style="display: flex; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap;">
                 <a href="radio-tv-interviews.html" style="display: block; background-color: #6f42c1; color: white; text-align: center; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: background-color 0.3s; min-width: 140px;">
                     🎙️ Interviews with the Scientists

@@ -21,12 +21,20 @@ All files in this knowledge base are:
 1. **Ask Windsurf** to search specific articles: "Find information about the Wall Street Journal coverage"
 2. **Reference articles** in your code: "See knowledge-base/articles/wsj-smart-underwear.md for details"
 3. **Add new content** by creating new markdown files
-4. **Store PDFs** in the pdfs/ folder and reference them in articles
+4. **Store media files** in the media/ folder and reference them in articles
 
 ## Key Articles
 
 - [Wall Street Journal - "Fitbit for Farts"](articles/wsj-smart-underwear.md)
 - [Wall Street Journal - Print Edition](articles/wsj-print-edition.md)
+- [Straits Times - Singapore Coverage](articles/straits-times.md)
+- [Straits Times - Website Screenshot](articles/straits-times-screenshot.md)
+- [The Verge - Website Screenshot](articles/the-verge-screenshot.md)
+- [WCAX - Vermont Coverage](articles/wcax-vermont.md)
+- [Leader-Call - News of the Weird](articles/leader-call-weird.md)
+- [Valley News Live - North Dakota Coverage](articles/valley-news-live.md)
+- [Fox 32 Chicago - Local TV Coverage](articles/fox-32-chicago.md)
+- [The Verge - Fartbit Coverage](articles/verge-fartbit.md)
 - [Scientific American - Fart Frequency Study](articles/scientific-american.md)
 - [CNN Newsource Coverage Map](articles/cnn-coverage.md)
 - [Case Western Comments on Brantley Hall](articles/case-western-comments.md)
