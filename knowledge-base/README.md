@@ -29,6 +29,7 @@ All files in this knowledge base are:
 - [Scientific American - Fart Frequency Study](articles/scientific-american.md)
 - [CNN Newsource Coverage Map](articles/cnn-coverage.md)
 - [Case Western Comments on Brantley Hall](articles/case-western-comments.md)
+- [Smartbit Facebook Meme](articles/smartbit-meme.md)
 
 ---
 
