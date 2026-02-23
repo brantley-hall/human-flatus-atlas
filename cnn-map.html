@@ -78,8 +78,8 @@
 </head>
 <body>
     <header>
-        <h1>📺 CNN Newsource Coverage Map</h1>
-        <p>Smart Underwear Research — National TV Coverage</p>
+        <h1>📺 Complete Coverage Map</h1>
+        <p>Smart Underwear Research — CNN Newsource + Local Twists</p>
     </header>
 
     <div class="container">
@@ -87,11 +87,11 @@
 
         <div class="stats-bar">
             <div class="stat-box">
-                <span class="number">39</span>
+                <span class="number">48</span>
                 <span class="label">TV Stations</span>
             </div>
             <div class="stat-box">
-                <span class="number">27</span>
+                <span class="number">31</span>
                 <span class="label">States + D.C.</span>
             </div>
             <div class="stat-box">
@@ -106,7 +106,19 @@
 
         <div id="map"></div>
 
-        <h2>📍 All CNN Newsource Stations</h2>
+        <!-- Legend -->
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #ddd;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="background-color: #cc0000; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"></div>
+                <span style="font-size: 0.85rem; color: #333;">CNN Newsource (39 stations)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="background-color: #ff6b6b; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"></div>
+                <span style="font-size: 0.85rem; color: #333;">Local Twists (9 stations)</span>
+            </div>
+        </div>
+
+        <h2>📍 All TV Stations</h2>
         <div class="station-list" id="station-list"></div>
     </div>
 
@@ -151,7 +163,17 @@
             { name: "WDAM Moselle", city: "Moselle, MS", lat: 31.5021, lng: -89.4195, url: "https://www.wdam.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
             { name: "WLOX Biloxi", city: "Biloxi, MS", lat: 30.3960, lng: -88.8853, url: "https://www.wlox.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
             { name: "WTVM Columbus", city: "Columbus, GA", lat: 32.4610, lng: -84.9877, url: "https://www.wtvm.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
-            { name: "WALB Albany", city: "Albany, GA", lat: 31.5785, lng: -84.1557, url: "https://www.walb.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" }
+            { name: "WALB Albany", city: "Albany, GA", lat: 31.5785, lng: -84.1557, url: "https://www.walb.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            // Local Twists Stations (Orange Markers)
+            { name: "We Are Iowa", city: "Des Moines, IA", lat: 41.5868, lng: -93.6250, url: "https://www.weareiowa.com/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WDRB Louisville", city: "Louisville, KY", lat: 38.2527, lng: -85.7585, url: "https://www.wdrb.com/news/wdrb-video/researchers-at-university-of-maryland-create-smart-underwear-to-measure-human-flatulence/video_89c794db-66f7-58a5-8daa-41a87367bd0c.html" },
+            { name: "WWAY TV3 Wilmington", city: "Wilmington, NC", lat: 34.2257, lng: -77.9447, url: "https://www.wwaytv3.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WUSA9 Washington D.C.", city: "Washington, D.C.", lat: 38.9072, lng: -77.0369, url: "https://www.wusa9.com/video/tech/science/umd-debuts-smart-underwear-that-tracks-well-you-know/65-35d4d012-fb45-483d-8ef8-e3a944022c57" },
+            { name: "Local 12 Cincinnati", city: "Cincinnati, OH", lat: 39.1031, lng: -84.5120, url: "https://local12.com/news/nation-world/researchers-develop-smart-underwear-to-measure-flatulence-spectrum-cincinnati-snap-in-device-that-tracks-intestinal-gas-around-the-clock-measuring-gut-microbial-metabolism-device-technology-health-benefit-university-of-maryland" },
+            { name: "WDRB Louisville (2nd)", city: "Louisville, KY", lat: 38.2527, lng: -85.7585, url: "https://www.wdrb.com/news/wdrb-video/researchers-at-university-of-maryland-create-smart-underwear-to-measure-human-flatulence/video_89c794db-66f7-58a5-8daa-41a87367bd0c.html" },
+            { name: "Valley Vanguard SVSU", city: "Saginaw, MI", lat: 43.4194, lng: -84.0775, url: "https://www.valleyvanguardonline.com/smart-underwear-study-shows-people-fart-more-than-they-admit/" },
+            { name: "10News San Diego", city: "San Diego, CA", lat: 32.7157, lng: -117.1611, url: "https://www.10news.com/news/fact-or-fiction/fact-or-fiction-scientists-design-smart-underwear-to-track-flatulence" },
+            { name: "The Georgia Sun", city: "Georgia", lat: 32.1656, lng: -82.9001, url: "https://thegeorgiasun.com/health/researchers-in-maryland-create-smart-underwear-to-find-out-how-much-you-fart" }
         ];
 
         // Initialize map centered on continental US
@@ -170,17 +192,32 @@
             popupAnchor: [0, -10]
         });
 
+        // Custom orange Local Twists marker
+        const localIcon = L.divIcon({
+            className: '',
+            html: '<div style="background-color:#ff6b6b; width:14px; height:14px; border-radius:50%; border:2px solid white; box-shadow:0 0 4px rgba(0,0,0,0.5);"></div>',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7],
+            popupAnchor: [0, -10]
+        });
+
         // Add markers and build station list
         const listEl = document.getElementById('station-list');
 
-        stations.forEach(s => {
-            const marker = L.marker([s.lat, s.lng], { icon: cnnIcon }).addTo(map);
+        stations.forEach((s, index) => {
+            // Use orange marker for Local Twists (indices 39-47), red for CNN Newsource
+            const isLocalTwist = index >= 39;
+            const icon = isLocalTwist ? localIcon : cnnIcon;
+            const markerColor = isLocalTwist ? '#ff6b6b' : '#cc0000';
+            const stationType = isLocalTwist ? 'Local Twist' : 'CNN Newsource';
+            
+            const marker = L.marker([s.lat, s.lng], { icon }).addTo(map);
             marker.bindPopup(`
                 <div style="font-family:Helvetica,sans-serif; min-width:180px;">
-                    <strong style="color:#cc0000; font-size:1rem;">📺 ${s.name}</strong><br>
+                    <strong style="color:${markerColor}; font-size:1rem;">📺 ${s.name}</strong><br>
                     <span style="color:#666; font-size:0.85rem;">${s.city}</span><br>
-                    <span style="color:#666; font-size:0.8rem;">39 TV stations · 27 states + D.C. · February 18, 2026 · CNN Newsource</span><br><br>
-                    <a href="${s.url}" target="_blank" style="color:#cc0000; font-weight:bold; font-size:0.85rem;">▶ Watch Story →</a>
+                    <span style="color:#666; font-size:0.8rem;">48 TV stations · 31 states + D.C. · February 18, 2026 · ${stationType}</span><br><br>
+                    <a href="${s.url}" target="_blank" style="color:${markerColor}; font-weight:bold; font-size:0.85rem;">▶ Watch Story →</a>
                 </div>
             `);
 
