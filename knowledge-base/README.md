@@ -28,6 +28,7 @@ All files in this knowledge base are:
 - [Wall Street Journal - "Fitbit for Farts"](articles/wsj-smart-underwear.md)
 - [Scientific American - Fart Frequency Study](articles/scientific-american.md)
 - [CNN Newsource Coverage Map](articles/cnn-coverage.md)
+- [Case Western Comments on Brantley Hall](articles/case-western-comments.md)
 
 ---
 
