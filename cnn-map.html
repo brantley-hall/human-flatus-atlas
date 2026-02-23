@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CNN Newsource Coverage Map - Human Flatus Atlas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { font-family: 'Helvetica', sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; color: #1a2a3a; }
+
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid #00FFFF;
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
+        header p { font-size: 1.1rem; font-weight: 600; margin: 0; }
+
+        .container { max-width: 1100px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+        a { color: #4169E1; font-weight: bold; text-decoration: none; }
+        a:hover { color: #cc0000; }
+
+        .back-button {
+            background-color: #cc0000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover { background-color: #990000; color: white; }
+
+        #map { height: 560px; width: 100%; border-radius: 8px; border: 3px solid #cc0000; margin-bottom: 20px; }
+
+        .stats-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            background-color: #cc0000;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 140px;
+        }
+        .stat-box .number { font-size: 2rem; font-weight: bold; display: block; }
+        .stat-box .label { font-size: 0.8rem; text-transform: uppercase; }
+
+        .station-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .station-item {
+            background-color: #f8f9fa;
+            border: 1px solid #cc0000;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+        }
+        .station-item a { color: #cc0000; }
+        .station-item .city { color: #666; font-size: 0.75rem; }
+
+        h2 { color: #cc0000; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📺 CNN Newsource Coverage Map</h1>
+        <p>Smart Underwear Research — National TV Coverage</p>
+    </header>
+
+    <div class="container">
+        <a href="cnn-hits.html" class="back-button">← Back to CNN News Service</a>
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <span class="number">27</span>
+                <span class="label">TV Stations</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">20</span>
+                <span class="label">States + D.C.</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">Feb 18</span>
+                <span class="label">2026 Broadcast</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">CNN</span>
+                <span class="label">Newsource</span>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <h2>📍 All CNN Newsource Stations</h2>
+        <div class="station-list" id="station-list"></div>
+    </div>
+
+    <script>
+        const stations = [
+            { name: "Fox 8 Cleveland", city: "Cleveland, OH", lat: 41.4993, lng: -81.6944, url: "https://fox8.com/news/scientists-make-smart-underwear-to-track-your-gas/" },
+            { name: "WOWT Omaha", city: "Omaha, NE", lat: 41.2565, lng: -95.9345, url: "https://www.wowt.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WTOC Savannah", city: "Savannah, GA", lat: 32.0835, lng: -81.0998, url: "https://www.wtoc.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "13ABC Toledo", city: "Toledo, OH", lat: 41.6639, lng: -83.5552, url: "https://www.13abc.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "Live 5 News Charleston", city: "Charleston, SC", lat: 32.7765, lng: -79.9311, url: "https://www.live5news.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WFSB Hartford", city: "Hartford, CT", lat: 41.7658, lng: -72.6851, url: "https://www.wfsb.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WIFR South Bend", city: "South Bend, IN", lat: 41.6764, lng: -86.2520, url: "https://www.wifr.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WAFB Columbia", city: "Baton Rouge, LA", lat: 30.4515, lng: -91.1871, url: "https://www.wafb.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WITN Bangor", city: "Greenville, NC", lat: 35.6127, lng: -77.3664, url: "https://www.witn.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "Hawaii News Now", city: "Honolulu, HI", lat: 21.3069, lng: -157.8583, url: "https://www.hawaiinewsnow.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "29 News Chicago", city: "Chicago, IL", lat: 41.8781, lng: -87.6298, url: "https://www.wbbm780.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "KKTV Colorado Springs", city: "Colorado Springs, CO", lat: 38.8339, lng: -104.8214, url: "https://www.kktv.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "KWQC Davenport", city: "Davenport, IA", lat: 41.5236, lng: -90.5776, url: "https://www.kwqc.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WYMT Hazard", city: "Hazard, KY", lat: 37.2498, lng: -83.1932, url: "https://www.wymt.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "KCBD Lubbock", city: "Lubbock, TX", lat: 33.5779, lng: -101.8552, url: "https://www.kcbd.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "1011 Now Lincoln", city: "Lincoln, NE", lat: 40.8136, lng: -96.7026, url: "https://www.1011now.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WDBJ7 Roanoke", city: "Roanoke, VA", lat: 37.2710, lng: -79.9414, url: "https://www.wdbj7.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "WSFA Montgomery", city: "Montgomery, AL", lat: 32.3668, lng: -86.3000, url: "https://www.wsfa.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "KGNS Laredo", city: "Laredo, TX", lat: 27.5306, lng: -99.4803, url: "https://www.kgns.tv/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WAGM TV Maine", city: "Presque Isle, ME", lat: 46.6812, lng: -68.0156, url: "https://www.wagmtv.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WIBW Topeka", city: "Topeka, KS", lat: 39.0558, lng: -95.6890, url: "https://www.wibw.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WRDW Augusta", city: "Augusta, GA", lat: 33.4735, lng: -82.0105, url: "https://www.wrdw.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WABI Bangor", city: "Bangor, ME", lat: 44.8012, lng: -68.7778, url: "https://www.wabi.tv/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "KBTX Bryan", city: "Bryan, TX", lat: 30.6744, lng: -96.3698, url: "https://www.kbtx.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "KWCH Wichita", city: "Wichita, KS", lat: 37.6872, lng: -97.3301, url: "https://www.kwch.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "KCTV5 Kansas City", city: "Kansas City, MO", lat: 39.0997, lng: -94.5786, url: "https://www.kctv5.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "KFYR Bismarck", city: "Bismarck, ND", lat: 46.8083, lng: -100.7837, url: "https://www.kfyrtv.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "WUSA9 Washington D.C.", city: "Washington, D.C.", lat: 38.9072, lng: -77.0369, url: "https://www.wusa9.com/video/tech/science/umd-debuts-smart-underwear-that-tracks-well-you-know/65-35d4d012-fb45-483d-8ef8-e3a944022c57" }
+        ];
+
+        // Initialize map centered on continental US
+        const map = L.map('map').setView([39.5, -98.35], 4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Custom red CNN marker
+        const cnnIcon = L.divIcon({
+            className: '',
+            html: '<div style="background-color:#cc0000; width:14px; height:14px; border-radius:50%; border:2px solid white; box-shadow:0 0 4px rgba(0,0,0,0.5);"></div>',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7],
+            popupAnchor: [0, -10]
+        });
+
+        // Add markers and build station list
+        const listEl = document.getElementById('station-list');
+
+        stations.forEach(s => {
+            const marker = L.marker([s.lat, s.lng], { icon: cnnIcon }).addTo(map);
+            marker.bindPopup(`
+                <div style="font-family:Helvetica,sans-serif; min-width:180px;">
+                    <strong style="color:#cc0000; font-size:1rem;">📺 ${s.name}</strong><br>
+                    <span style="color:#666; font-size:0.85rem;">${s.city}</span><br>
+                    <span style="color:#666; font-size:0.8rem;">February 18, 2026 · CNN Newsource</span><br><br>
+                    <a href="${s.url}" target="_blank" style="color:#cc0000; font-weight:bold; font-size:0.85rem;">▶ Watch Story →</a>
+                </div>
+            `);
+
+            // Add to station list below map
+            const item = document.createElement('div');
+            item.className = 'station-item';
+            item.innerHTML = `<strong><a href="${s.url}" target="_blank">📺 ${s.name}</a></strong><br><span class="city">${s.city}</span>`;
+            listEl.appendChild(item);
+        });
+    </script>
+</body>
+</html>
