@@ -1,0 +1,16 @@
+# Ignore PDF files to keep repository size manageable
+*.pdf
+*.PDF
+
+# Ignore temporary files
+*.tmp
+*.temp
+~*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Keep markdown files and structure
+!*.md
+!README.md
