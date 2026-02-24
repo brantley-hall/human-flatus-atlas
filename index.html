@@ -19,7 +19,8 @@
         header h1 { font-size: 2.5rem; margin-bottom: 0.3rem; }
         header p { font-size: 1.6rem; font-weight: 600; margin: 0; margin-bottom: 0.5rem; }
         
-        .container { max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .main-container { max-width: 1200px; margin: 2rem auto; }
+        .content { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         
         h2 { color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 1.5rem; margin-bottom: 1.5rem; }
         
@@ -43,9 +44,11 @@
         <span class="badge" style="background-color: #ff6b6b; color: white; padding: 8px 16px; border-radius: 20px; font-size: 1.1rem; font-weight: bold; margin-top: 10px; display: inline-block;">4,700 applications received!</span>
     </header>
     
-    <div class="container">
+    <div class="main-container">
+        <!-- Main Content -->
+        <div class="content">
         
-        <section class="story">
+        <section class="story" id="featured-multimedia">
             <h2>📺 Featured Multimedia</h2>
             
             <!-- Featured Video - Stephen Colbert -->
@@ -68,46 +71,36 @@
             </div>
         </section>
         
-        <section class="story">
-            <h2>� Breaking News</h2>
+        <section class="story" id="breaking-news">
+            <h2>📰 Breaking News</h2>
             <!-- Wall Street Journal -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490;">
-                <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">📈 Wall Street Journal</h3>
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
+                <!-- WSJ Screenshot - Left Side Full Height -->
+                <div style="position: absolute; top: 20px; bottom: 20px; left: 20px; width: 45%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                    <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
+                        📸 Wall Street Journal
+                    </div>
+                    <div style="flex: 1; overflow: hidden; position: relative; cursor: pointer;" onclick="window.open('https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1', '_blank')">
+                        <img src="knowledge-base/media/WSJ-Screenshot.png" 
+                             alt="Wall Street Journal website screenshot" 
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none; transition: transform 0.2s;"
+                             loading="lazy">
+                    </div>
+                </div>
                 
-                <div style="display: flex; gap: 20px; align-items: flex-start;">
-                    <!-- Main WSJ Article (Left Column) -->
-                    <div style="flex: 3;">
-                        <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 20, 2026</p>
-                        <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Christopher Mims</p>
-                        
-                        <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                            <strong><a href="https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1" target="_blank" style="font-size: 1.1rem; color: #1a5490;">It's Called the 'Fitbit for Farts'—and It's No Joke</a></strong>
-                            <p style="color: #666; font-size: 0.8rem; margin: 8px 0 0 0;">Scientists developing a new underwear-able hope to do for gastroenterology what the Apple Watch did for cardiology</p>
-                        </div>
-                        
-                        <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                            <p style="margin: 0;">"As I type this, a battery-powered computer tucked in my, er, swimsuit area is monitoring for my next flatus. Yes, flatus means 'fart.' Don't judge me—it's for science."</p>
-                        </div>
+                <!-- Text Content - Right Side -->
+                <div style="padding-left: 50%;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">� Wall Street Journal</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 20, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Christopher Mims</p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1" target="_blank" style="font-size: 1.1rem; color: #1a5490;">It's Called the 'Fitbit for Farts'—and It's No Joke</a></strong>
+                        <p style="color: #666; font-size: 0.8rem; margin: 8px 0 0 0;">Scientists developing a new underwear-able hope to do for gastroenterology what the Apple Watch did for cardiology</p>
                     </div>
                     
-                    <!-- LinkedIn Video (Right Column) -->
-                    <div style="flex: 2; background-color: #f0f8ff; padding: 15px; border-radius: 8px; border: 1px solid #0077b5;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                            <h4 style="color: #0077b5; margin: 0; font-size: 1rem; font-weight: bold;">📹 Author Video</h4>
-                            <span class="badge">Log Into LinkedIn</span>
-                        </div>
-                        
-                        <p style="color: #666; font-size: 0.8rem; margin-bottom: 8px;">February 23, 2026</p>
-                        
-                        <div style="background-color: white; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #0077b5;">
-                            <strong><a href="https://www.linkedin.com/videos/christopher-mims-club_this-week-im-bringing-readers-a-most-unusual-activity-7430729850363056128-PA_K/" target="_blank" style="font-size: 0.85rem; color: #0077b5;">Christopher Mims discusses Smart Underwear research</a></strong>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://www.linkedin.com/videos/christopher-mims-club_this-week-im-bringing-readers-a-most-unusual-activity-7430729850363056128-PA_K/" target="_blank" style="display: inline-block; background-color: #0077b5; color: white; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-decoration: none; border: none;">
-                                📹 Watch →
-                            </a>
-                        </div>
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1', '_blank')">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"As I type this, a battery-powered computer tucked in my, er, swimsuit area is monitoring for my next flatus. Yes, flatus means 'fart.' Don't judge me—it's for science."</p>
                     </div>
                 </div>
             </div>
@@ -119,10 +112,10 @@
                     <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
                         📸 Straits Times
                     </div>
-                    <div style="flex: 1; overflow: hidden; position: relative;">
+                    <div style="flex: 1; overflow: hidden; position: relative; cursor: pointer;" onclick="window.open('https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health', '_blank')">
                         <img src="knowledge-base/media/The Straits Times.png" 
                              alt="Straits Times website screenshot" 
-                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none; transition: transform 0.2s;"
                              loading="lazy">
                     </div>
                 </div>
@@ -137,8 +130,8 @@
                         <strong><a href="https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Fart for a cause: US researchers develop 'smart underwear' that tracks farts to explore gut health</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                        <p style="margin: 0;">"Wanted: People who fart. A 'smart underwear' to measure human flatulence has been created by scientists from University of Maryland in the United States, and they are looking for volunteers to wear it."</p>
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health', '_blank')">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"Wanted: People who fart. A 'smart underwear' to measure human flatulence has been created by scientists from University of Maryland in the United States, and they are looking for volunteers to wear it."</p>
                     </div>
                 </div>
             </div>
@@ -155,8 +148,8 @@
                         <strong><a href="https://www.theverge.com/gadgets/882910/fartbit-a-fitbit-for-farts" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Researchers at the University of Maryland built a Fartbit, a Fitbit for farts</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                        <p style="margin: 0;">"The team is constructing the Human Flatus Atlas, bringing modern wearable monitors to bear on digestive health, measuring the frequency and intensity of farts. The team even had to create an artificial butt that could pass gas on command while developing the prototype."</p>
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.theverge.com/gadgets/882910/fartbit-a-fitbit-for-farts', '_blank')">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"The team is constructing the Human Flatus Atlas, bringing modern wearable monitors to bear on digestive health, measuring the frequency and intensity of farts. The team even had to create an artificial butt that could pass gas on command while developing the prototype."</p>
                     </div>
                 </div>
                 
@@ -165,16 +158,16 @@
                     <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
                         📸 The Verge
                     </div>
-                    <div style="flex: 1; overflow: hidden; position: relative;">
+                    <div style="flex: 1; overflow: hidden; position: relative; cursor: pointer;" onclick="window.open('https://www.theverge.com/gadgets/882910/fartbit-a-fitbit-for-farts', '_blank')">
                         <img src="knowledge-base/media/Verge-Screenshot.png" 
                              alt="The Verge website screenshot" 
-                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none; transition: transform 0.2s;"
                              loading="lazy">
                     </div>
                 </div>
             </div>
             
-            <!-- Major Features Section -->
+            <section class="story" id="major-features">
             <h2 style="color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 3rem;">📰 Major Features</h2>
             
             <!-- Forbes (1-column) - MOVED TO TOP -->
@@ -184,10 +177,10 @@
                     <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
                         📸 Forbes
                     </div>
-                    <div style="flex: 1; overflow: hidden; position: relative;">
+                    <div style="flex: 1; overflow: hidden; position: relative; cursor: pointer;" onclick="window.open('https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/', '_blank')">
                         <img src="knowledge-base/media/Forbes-Snippet.png" 
                              alt="Forbes website screenshot" 
-                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none;"
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none; transition: transform 0.2s;"
                              loading="lazy">
                     </div>
                 </div>
@@ -202,8 +195,8 @@
                         <strong><a href="https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">'Smart Underwear' Finds People Fart More Often Than Previously Thought</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left;">
-                        <p style="margin: 0;">"Did you get wind of what that new fart study found—you know the one recently published in the journal Biosensors and Bioelectronics: X? Well, participants in the study farted on average 32 times a day, which is significantly higher than the 10 to 20 times a day that farters had self-reported in previous studies. In other words, this breaking wind news suggests that you may be more of a private tooter each day than you realize."</p>
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.forbes.com/sites/brucelee/2026/02/15/smart-underwear-finds-people-fart-more-often-than-previously-thought/', '_blank')">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"Did you get wind of what that new fart study found—you know the one recently published in the journal Biosensors and Bioelectronics: X? Well, participants in the study farted on average 32 times a day, which is significantly higher than the 10 to 20 times a day that farters had self-reported in previous studies. In other words, this breaking wind news suggests that you may be more of a private tooter each day than you realize."</p>
                     </div>
                 </div>
             </div>
@@ -418,8 +411,8 @@
                 <a href="radio-tv-interviews.html" style="display: block; background-color: #6f42c1; color: white; text-align: center; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: background-color 0.3s; min-width: 140px;">
                     🎙️ Interviews with the Scientists
                 </a>
-                <a href="cnn-hits.html" style="display: block; background-color: #cc0000; color: white; text-align: center; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: background-color 0.3s; min-width: 140px;">
-                    📺 CNN News Service
+                <a href="cnn-map.html" style="display: block; background-color: #cc0000; color: white; text-align: center; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: background-color 0.3s; min-width: 140px;">
+                    �️ CNN Coverage Map
                 </a>
                 
                 <a href="local-twists.html" style="display: block; background-color: #ff6b6b; color: white; text-align: center; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; transition: background-color 0.3s; min-width: 140px;">
@@ -436,7 +429,7 @@
             </div>
         </section>
 
-        <section class="story">
+        <section class="story" id="research">
             <h2>🔬 Research Foundation</h2>
             
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
@@ -456,6 +449,7 @@
                 </a>
             </div>
         </section>
+        </div>
     </div>
 </body>
 </html>

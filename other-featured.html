@@ -18,7 +18,7 @@
         
         .container { max-width: 900px; margin: 3rem auto; background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         
-        h2 { color: #28a745; border-left: 5px solid #20c997; padding-left: 15px; margin-top: 2rem; }
+        h2 { color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 2rem; }
         
         .story { margin-bottom: 3rem; border-bottom: 1px solid #e1e8ed; padding-bottom: 2rem; }
         .story:last-child { border-bottom: none; }
@@ -26,14 +26,14 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
-        /* Interactive Teal Links */
-        a { color: #28a745; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
-        a:hover { color: #20c997; border-bottom: 2px solid #20c997; }
+        /* Interactive Aqua Links */
+        a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
+        a:hover { color: #008b8b; border-bottom: 2px solid #00FFFF; }
         
-        .badge { background-color: #20c997; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+        .badge { background: linear-gradient(135deg, #6BB6E8, #40E0D0) !important; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
         
         .back-button { 
-            background-color: #28a745; 
+            background: linear-gradient(135deg, #4169E1, #008b8b); 
             color: white; 
             padding: 10px 20px; 
             border-radius: 6px; 
@@ -41,12 +41,13 @@
             font-weight: bold; 
             display: inline-block; 
             margin-bottom: 20px;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
         }
-        .back-button:hover { background-color: #20c997; }
+        .back-button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(65, 105, 225, 0.4); }
         
         .global-coverage { 
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%); 
+            background: linear-gradient(135deg, #4169E1, #008b8b); 
             color: white; 
             padding: 3px 8px; 
             border-radius: 12px; 
@@ -88,15 +89,16 @@
                     </div>
                 </div>
                 
-                <!-- Everyday Health -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Everyday Health</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Erica Sweeney & Tom Gavin</p>
+                <!-- Medical News Today -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Medical News Today</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 16, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Tim Newman</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.everydayhealth.com/digestive-health/what-your-daily-fart-count-could-say-about-your-health/" target="_blank" style="font-size: 0.85rem; color: #28a745;">What Your Daily Fart Count Could Say About Your Health</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.medicalnewstoday.com/articles/smart-underwear-could-help-researchers-better-understand-human-farts" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Smart underwear could help researchers better understand human farts</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -107,14 +109,15 @@
                 </div>
                 
                 <!-- Female First -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇬🇧 Female First</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇬🇧 Female First</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 16, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Female First Staff</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.femalefirst.co.uk/bizarre/scientists-develop-smart-underwear-help-understand-farts-1437747.html" target="_blank" style="font-size: 0.85rem; color: #28a745;">Scientists develop 'smart underwear' to help us understand our farts</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.femalefirst.co.uk/bizarre/scientists-develop-smart-underwear-help-understand-farts-1437747.html" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists develop 'smart underwear' to help us understand our farts</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -127,20 +130,21 @@
             
             <!-- Global Coverage Stories in 3 columns (Row 2) -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
-                <!-- UNILAD -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📺 UNILAD</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Grace Pateras</p>
+                <!-- Straits Times -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇸🇬 Straits Times</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 16, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Straits Times Staff</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.uniladtech.com/science/news/scientists-develop-smart-underwear-track-regularly-fart-075313-20260213" target="_blank" style="font-size: 0.85rem; color: #28a745;">Scientists Develop Smart Underwear to Track How Regularly People Fart and It's Not What You'd Expect</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.straitstimes.com/singapore/health/scientists-develop-smart-underwear-track-regularly-fart-075313-20260216" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists develop smart underwear to track how regularly people fart</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> UK digital media platform brings Smart Underwear to viral entertainment audience, reaching global youth demographic.
+                            <strong>Global Impact:</strong> Singapore's national newspaper brings scientific innovation to Asian audience, highlighting gut health research significance.
                         </p>
                     </div>
                 </div>
@@ -184,56 +188,59 @@
             
             <!-- Global Coverage Stories in 3 columns (Row 3) -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
-                <!-- Telegraph India -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇮🇳 Telegraph India</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Letters to the Editor</p>
+                <!-- UNILAD -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📺 UNILAD</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Grace Pateras</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.telegraphindia.com/opinion/letters-to-the-editor-a-smart-underwear-to-track-your-farts-prnt/cid/2147970" target="_blank" style="font-size: 0.85rem; color: #28a745;">A smart underwear to track your farts</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.uniladtech.com/science/news/scientists-develop-smart-underwear-track-regularly-fart-075313-20260213" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists Develop Smart Underwear to Track How Regularly People Fart and It's Not What You'd Expect</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> Indian newspaper's Letters to the Editor section discusses Smart Underwear research, bringing scientific discussion to South Asian readership.
+                            <strong>Global Impact:</strong> UK digital media platform brings Smart Underwear to viral entertainment audience, reaching global youth demographic.
                         </p>
                     </div>
                 </div>
                 
-                <!-- GIGAZINE -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇯🇵 GIGAZINE</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 16, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">GIGAZINE Staff</p>
+                <!-- ETV Bharat -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">�� ETV Bharat</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 17, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">ETV Bharat Tech Team</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://gigazine.net/gsc_news/en/20260216-smart-underwear-measure-human-flatulence/" target="_blank" style="font-size: 0.85rem; color: #28a745;">'Smart underwear' developed to measure the quantity and quality of human flatus</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.etvbharat.com/technology/smart-underwear-track-regularly-fart-075313-20260213" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Smart underwear to track how regularly people fart</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> Japanese digital media platform explains Microbiome Activity Index and Ventoscity startup, bringing Smart Underwear tech details to Asian audience.
+                            <strong>Global Impact:</strong> Indian regional media platform covers Smart Underwear innovation, bringing scientific research to regional Indian audience.
                         </p>
                     </div>
                 </div>
                 
-                <!-- The Midweek Sun Botswana -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇧🇼 The Midweek Sun Botswana</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Midweek Sun Staff</p>
+                <!-- IFL Science -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🔬 IFL Science</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">IFL Science Staff</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.pressreader.com/botswana/the-midweek-sun/20260218/281711211109585" target="_blank" style="font-size: 0.85rem; color: #28a745;">Smart Underwear research featured in Botswana newspaper</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.iflscience.com/smart-underwear-track-how-regularly-people-fart-075313-20260213" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Smart Underwear To Track How Regularly People Fart</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> Botswana newspaper brings Smart Underwear research to Southern African readership, expanding scientific awareness across the region.
+                            <strong>Global Impact:</strong> International science education platform explains research methodology and findings to global science enthusiasts.
                         </p>
                     </div>
                 </div>
@@ -391,60 +398,101 @@
                     </div>
                 </div>
 
-                <!-- PressReader -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📰 PressReader</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">PressReader Staff</p>
-                    <span class="global-coverage">Global Coverage</span>
-                    
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.pressreader.com/article/fart-tracker-underwear" target="_blank" style="font-size: 0.85rem; color: #28a745;">FART TRACKER UNDERWEAR</a></strong>
-                    </div>
-                    
-                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
-                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> Digital magazine platform distributes Smart Underwear coverage to international readership, emphasizing the innovative tracking technology.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- indy100 + Irish Independent -->
-            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
-                <!-- indy100 -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇬🇧 indy100</h3>
+                <!-- Daily Mail -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇬🇧 Daily Mail</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
-                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">indy100 Staff</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Daily Mail Reporter</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.indy100.com/article/scientists-create-smart-underwear-that-tracks-your-gas-and-yes-its-serious-research-4328764" target="_blank" style="font-size: 0.85rem; color: #28a745;">Scientists create smart underwear that tracks your gas – and yes, it's serious research</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.dailymail.co.uk/sciencetech/article-13981275/Smart-underwear-track-regularly-people-fart-94-7-accuracy.html" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Smart underwear can track how regularly people fart with 94.7% accuracy</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
-                            <strong>Global Impact:</strong> UK digital media platform brings Smart Underwear to millennial audience with emphasis on scientific legitimacy and research validation.
+                            <strong>Global Impact:</strong> UK national newspaper highlights 94.7% accuracy in detecting dietary changes, bringing scientific validation to global audience.
                         </p>
                     </div>
                 </div>
-
+                
+                <!-- LADbible -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📱 LADbible</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">LADbible Tech</p>
+                    <span class="global-coverage">Global Coverage</span>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.ladbible.com/tech/news/scientists-develop-smart-underwear-track-regularly-fart-075313-20260213" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists develop smart underwear to track how regularly people fart</a></strong>
+                    </div>
+                    
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Global Impact:</strong> UK digital entertainment platform reaches global youth audience with accessible science content about Smart Underwear innovation.
+                        </p>
+                    </div>
+                </div>
+                
                 <!-- Irish Independent -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇮🇪 Irish Independent</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇮🇪 Irish Independent</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Irish Independent Staff</p>
                     <span class="global-coverage">Global Coverage</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #28a745;">
-                        <strong><a href="https://www.independent.ie/scientists-develop-new-smart-underwear-to-measure-flatulence-4328764.html" target="_blank" style="font-size: 0.85rem; color: #28a745;">Scientists develop new smart underwear to measure flatulence</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.independent.ie/scientists-develop-new-smart-underwear-to-measure-flatulence-4328764.html" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists develop new smart underwear to measure flatulence</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
                         <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
                             <strong>Global Impact:</strong> Irish national newspaper covers Smart Underwear research, bringing scientific innovation to European audience with focus on health applications.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global Coverage Stories in 3 columns (Row 4) -->
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <!-- FirstPost -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🇮🇳 FirstPost</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
+                    <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">FirstPost Staff</p>
+                    <span class="global-coverage">Global Coverage</span>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.firstpost.com/explainers/a-smart-underwear-to-track-farts-why-are-scientists-so-interested-in-flatulence-13981275.html" target="_blank" style="font-size: 0.85rem; color: #4169E1;">A 'smart underwear' to track farts. Why are scientists so interested in flatulence?</a></strong>
+                    </div>
+                    
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Global Impact:</strong> Indian news platform provides detailed scientific explainer covering device functionality, research methodology, and discovery that healthy adults pass gas an average of 32 times per day, with 94.7% accuracy in detecting dietary changes.
                         </p>
+                    </div>
+                </div>
+                
+                <!-- Placeholder 1 -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px dashed #4169E1; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <div style="text-align: center; color: #999;">
+                        <p style="margin: 0; font-size: 1.2rem;">🌐</p>
+                        <p style="margin: 5px 0; font-size: 0.9rem;">Coming Soon</p>
+                        <p style="margin: 0; font-size: 0.8rem;">Global Coverage</p>
+                    </div>
+                </div>
+                
+                <!-- Placeholder 2 -->
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px dashed #4169E1; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <div style="text-align: center; color: #999;">
+                        <p style="margin: 0; font-size: 1.2rem;">🌐</p>
+                        <p style="margin: 5px 0; font-size: 0.9rem;">Coming Soon</p>
+                        <p style="margin: 0; font-size: 0.8rem;">Global Coverage</p>
                     </div>
                 </div>
             </div>

@@ -57,69 +57,119 @@
         .stat-box .number { font-size: 2rem; font-weight: bold; display: block; }
         .stat-box .label { font-size: 0.8rem; text-transform: uppercase; }
 
-        .station-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .station-item {
-            background-color: #f8f9fa;
-            border: 1px solid #cc0000;
-            border-radius: 6px;
-            padding: 10px 14px;
-            font-size: 0.85rem;
-        }
-        .station-item a { color: #cc0000; }
-        .station-item .city { color: #666; font-size: 0.75rem; }
+        .station-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .station-box { background: white; border-radius: 8px; padding: 15px; border-left: 4px solid #cc0000; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .station-box:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .station-box.local-twist { border-left-color: #ff6b6b; }
+        .station-name { color: #cc0000; font-weight: bold; font-size: 0.9rem; margin-bottom: 5px; display: block; text-decoration: none; }
+        .station-box.local-twist .station-name { color: #ff6b6b; }
+        .station-city { color: #666; font-size: 0.8rem; }
+        .station-type { font-size: 0.7rem; color: #999; margin-top: 5px; }
 
         h2 { color: #cc0000; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 1.5rem; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .station-grid { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 1024px) {
+            .container > div:first-child { 
+                flex-direction: column; 
+                align-items: stretch;
+            }
+            .container > div:first-child > div {
+                min-height: auto !important;
+            }
+            #map {
+                min-height: 300px !important;
+                height: 300px !important;
+            }
+        }
+        
+        .featured-station:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(204, 0, 0, 0.2); }
+        .video-preview:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        header a:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(65, 105, 225, 0.4); }
     </style>
 </head>
 <body>
     <header>
-        <h1>📺 Complete Coverage Map</h1>
-        <p>Smart Underwear Research — CNN Newsource + Local Twists</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto;">
+            <a href="index.html" style="background: linear-gradient(135deg, #4169E1, #008b8b); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3); border: 2px solid rgba(255, 255, 255, 0.3);">
+                🏠 Main Page
+            </a>
+            <div style="text-align: right;">
+                <h1 style="margin: 0; font-size: 2.5rem; margin-bottom: 0.5rem;">📺 CNN News Package Distribution</h1>
+                <p style="margin: 0; font-size: 1.6rem; font-weight: 600;">Smart Underwear Research — National Coverage Map</p>
+            </div>
+        </div>
     </header>
 
     <div class="container">
-        <a href="cnn-hits.html" class="back-button">← Back to CNN News Service</a>
 
-        <div class="stats-bar">
-            <div class="stat-box">
-                <span class="number">53</span>
-                <span class="label">TV Stations</span>
+        <!-- Optimized Two Column Layout -->
+        <div style="display: flex; gap: 22px; margin-bottom: 22px; align-items: stretch;">
+            
+            <!-- Left Column: WUSA9 Optimized -->
+            <div style="flex: 0.88; min-width: 0; max-width: 352px;">
+                <div style="background: linear-gradient(135deg, #f8f9fa, #fff); padding: 19px; border-radius: 12px; border: 2px solid #cc0000; box-shadow: 0 4px 12px rgba(204, 0, 0, 0.15); position: relative; overflow: hidden;">
+                    <!-- Decorative corner -->
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(204, 0, 0, 0.1); border-radius: 50%;"></div>
+                    
+                    <!-- CNN Distribution Snippet -->
+                    <div style="background: #000; border-radius: 6px; overflow: hidden; position: relative; height: 240px;">
+                        <a href="https://www.wusa9.com/video/tech/science/umd-debuts-smart-underwear-that-tracks-well-you-know/65-35d4d012-fb45-483d-8ef8-e3a944022c57" target="_blank" style="display: block; width: 100%; height: 100%; text-decoration: none; transition: transform 0.2s;">
+                            <img src="knowledge-base/media/cnn-distribution.png" alt="CNN Distribution Screenshot" style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                    </div>
+                    
+                    <!-- WUSA9 Link Below -->
+                    <div style="margin-top: 10px; text-align: center;">
+                        <a href="https://www.wusa9.com/video/tech/science/umd-debuts-smart-underwear-that-tracks-well-you-know/65-35d4d012-fb45-483d-8ef8-e3a944022c57" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #cc0000, #8b0000); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.7rem; font-weight: bold; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(204, 0, 0, 0.3);">
+                            📺 Watch WUSA9 Coverage Example
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="stat-box">
-                <span class="number">33</span>
-                <span class="label">States + D.C.</span>
-            </div>
-            <div class="stat-box">
-                <span class="number">Feb 18</span>
-                <span class="label">2026 Broadcast</span>
-            </div>
-            <div class="stat-box">
-                <span class="number">CNN</span>
-                <span class="label">Newsource</span>
+            
+            <!-- Right Column: Optimized Map -->
+            <div style="flex: 1.12; min-width: 0;">
+                <div style="background: linear-gradient(135deg, #f8f9fa, #fff); padding: 17px; border-radius: 12px; border: 2px solid #cc0000; box-shadow: 0 4px 12px rgba(204, 0, 0, 0.15); position: relative; overflow: hidden;">
+                    <!-- Decorative corner -->
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(204, 0, 0, 0.1); border-radius: 50%;"></div>
+                    
+                    <!-- Stats Boxes at Top -->
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 11px;">
+                        <div style="background: linear-gradient(135deg, #ff6b6b, #ff5252); color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);">
+                            53 Stations
+                        </div>
+                        <div style="background: linear-gradient(135deg, #ff6b6b, #ff5252); color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);">
+                            33 States
+                        </div>
+                    </div>
+                    
+                    <!-- Optimized Map -->
+                    <div id="map" style="height: 220px; border-radius: 6px; overflow: hidden; margin-bottom: 11px; position: relative;">
+                    </div>
+                    
+                    <!-- Optimized Legend -->
+                    <div style="display: flex; justify-content: center; gap: 17px; padding: 7px; background: rgba(204, 0, 0, 0.05); border-radius: 6px;">
+                        <div style="display: flex; align-items: center; gap: 4px;">
+                            <div style="background-color: #cc0000; width: 9px; height: 9px; border-radius: 50%; border: 1px solid white;"></div>
+                            <span style="font-size: 0.65rem; color: #333;">CNN Package (45)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 4px;">
+                            <div style="background-color: #ff6b6b; width: 9px; height: 9px; border-radius: 50%; border: 1px solid white;"></div>
+                            <span style="font-size: 0.65rem; color: #333;">With Local Twist (9)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="map"></div>
-
-        <!-- Legend -->
-        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #ddd;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <div style="background-color: #cc0000; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"></div>
-                <span style="font-size: 0.85rem; color: #333;">CNN Newsource (43 stations)</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <div style="background-color: #ff6b6b; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"></div>
-                <span style="font-size: 0.85rem; color: #333;">Local Twists (11 stations)</span>
-            </div>
-        </div>
-
-        <h2>📍 All TV Stations</h2>
-        <div class="station-list" id="station-list"></div>
+        
+        <h2>📍 All Stations that Ran the CNN Package</h2>
+        <div class="station-grid" id="station-grid"></div>
     </div>
 
     <script>
@@ -164,6 +214,7 @@
             { name: "WLOX Biloxi", city: "Biloxi, MS", lat: 30.3960, lng: -88.8853, url: "https://www.wlox.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
             { name: "WTVM Columbus", city: "Columbus, GA", lat: 32.4610, lng: -84.9877, url: "https://www.wtvm.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
             { name: "WALB Albany", city: "Albany, GA", lat: 31.5785, lng: -84.1557, url: "https://www.walb.com/2026/02/18/scientists-make-smart-underwear-track-your-gas/" },
+            { name: "Valley News Live", city: "Fargo, ND", lat: 46.8772, lng: -96.7898, url: "https://www.valleynewslive.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             // Local Twists Stations (Orange Markers)
             { name: "We Are Iowa", city: "Des Moines, IA", lat: 41.5868, lng: -93.6250, url: "https://www.weareiowa.com/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             { name: "WDRB Louisville", city: "Louisville, KY", lat: 38.2527, lng: -85.7585, url: "https://www.wdrb.com/news/wdrb-video/researchers-at-university-of-maryland-create-smart-underwear-to-measure-human-flatulence/video_89c794db-66f7-58a5-8daa-41a87367bd0c.html" },
@@ -179,11 +230,16 @@
             { name: "Fox 8 Live New Orleans", city: "New Orleans, LA", lat: 29.9511, lng: -90.0715, url: "https://www.fox8live.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             { name: "KOLO Reno", city: "Reno, NV", lat: 39.5296, lng: -119.8138, url: "https://www.kolotv.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             { name: "WCAX Vermont", city: "Burlington, VT", lat: 44.4759, lng: -73.2121, url: "https://www.wcax.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
-            { name: "Valley News Live", city: "Fargo, ND", lat: 46.8772, lng: -96.7898, url: "https://www.valleynewslive.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" }
+            { name: "Valley News Live", city: "Fargo, ND", lat: 46.8772, lng: -96.7898, url: "https://www.valleynewslive.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
         ];
 
-        // Initialize map centered on continental US
+        // Initialize map centered on continental US, focused on main coverage area
         const map = L.map('map').setView([39.5, -98.35], 4);
+        
+        // Fit bounds to continental US stations (excluding Hawaii)
+        const continentalStations = stations.filter(s => s.city !== "Honolulu, HI");
+        const bounds = L.latLngBounds(continentalStations.map(s => [s.lat, s.lng]));
+        map.fitBounds(bounds, { padding: [20, 20] });
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -207,12 +263,12 @@
             popupAnchor: [0, -10]
         });
 
-        // Add markers and build station list
-        const listEl = document.getElementById('station-list');
+        // Add markers and build station grid
+        const gridEl = document.getElementById('station-grid');
 
         stations.forEach((s, index) => {
-            // Use orange marker for Local Twists (indices 39-47), red for CNN Newsource
-            const isLocalTwist = index >= 39;
+            // Use orange marker for Local Twists (indices 40+), red for CNN Newsource (indices 0-39)
+            const isLocalTwist = index >= 40;
             const icon = isLocalTwist ? localIcon : cnnIcon;
             const markerColor = isLocalTwist ? '#ff6b6b' : '#cc0000';
             const stationType = isLocalTwist ? 'Local Twist' : 'CNN Newsource';
@@ -222,16 +278,20 @@
                 <div style="font-family:Helvetica,sans-serif; min-width:180px;">
                     <strong style="color:${markerColor}; font-size:1rem;">📺 ${s.name}</strong><br>
                     <span style="color:#666; font-size:0.85rem;">${s.city}</span><br>
-                    <span style="color:#666; font-size:0.8rem;">48 TV stations · 31 states + D.C. · February 18, 2026 · ${stationType}</span><br><br>
+                    <span style="color:#666; font-size:0.8rem;">53 TV stations · 33 states + D.C. · February 18, 2026 · ${stationType}</span><br><br>
                     <a href="${s.url}" target="_blank" style="color:${markerColor}; font-weight:bold; font-size:0.85rem;">▶ Watch Story →</a>
                 </div>
             `);
 
-            // Add to station list below map
-            const item = document.createElement('div');
-            item.className = 'station-item';
-            item.innerHTML = `<strong><a href="${s.url}" target="_blank">📺 ${s.name}</a></strong><br><span class="city">${s.city}</span>`;
-            listEl.appendChild(item);
+            // Add to station grid below map
+            const box = document.createElement('div');
+            box.className = isLocalTwist ? 'station-box local-twist' : 'station-box';
+            box.innerHTML = `
+                <a href="${s.url}" target="_blank" class="station-name">📺 ${s.name}</a>
+                <div class="station-city">${s.city}</div>
+                <div class="station-type">${stationType}</div>
+            `;
+            gridEl.appendChild(box);
         });
     </script>
 </body>
