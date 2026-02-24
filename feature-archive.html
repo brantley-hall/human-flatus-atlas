@@ -18,7 +18,7 @@
         
         .container { max-width: 900px; margin: 3rem auto; background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         
-        h2 { color: #6c757d; border-left: 5px solid #495057; padding-left: 15px; margin-top: 2rem; }
+        h2 { color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 2rem; }
         
         .story { margin-bottom: 3rem; border-bottom: 1px solid #e1e8ed; padding-bottom: 2rem; }
         .story:last-child { border-bottom: none; }
@@ -26,14 +26,14 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
-        /* Interactive Gray Links */
-        a { color: #6c757d; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
-        a:hover { color: #495057; border-bottom: 2px solid #495057; }
+        /* Interactive Aqua Links */
+        a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
+        a:hover { color: #008b8b; border-bottom: 2px solid #00FFFF; }
         
-        .badge { background-color: #495057; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+        .badge { background: linear-gradient(135deg, #6BB6E8, #40E0D0) !important; color: #1a2a3a; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
         
         .back-button { 
-            background-color: #6c757d; 
+            background: linear-gradient(135deg, #4169E1, #008b8b); 
             color: white; 
             padding: 10px 20px; 
             border-radius: 6px; 
@@ -41,9 +41,23 @@
             font-weight: bold; 
             display: inline-block; 
             margin-bottom: 20px;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
         }
-        .back-button:hover { background-color: #495057; }
+        .back-button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(65, 105, 225, 0.4); }
+        
+        .feature-archive { 
+            background: linear-gradient(135deg, #4169E1, #008b8b); 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(65, 105, 225, 0.3);
+        }
         
         .archived { 
             background: linear-gradient(135deg, #6c757d 0%, #495057 100%); 
@@ -71,50 +85,59 @@
             <!-- Row 1: MSN + EurekAlert! + Earth.com -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- MSN (most recent) -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌐 MSN</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌐 MSN</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">MSN Health Staff</p>
-                    <span class="archived">Archived</span>
+                    <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.msn.com/en-us/health/other/how-often-do-you-fart-this-smart-underwear-can-keep-track-because-figuring-out-a-baseline-is-important-for-science/ar-AA1WwQJo" target="_blank" style="font-size: 0.85rem; color: #6c757d;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.msn.com/en-us/health/other/how-often-do-you-fart-this-smart-underwear-can-keep-track-because-figuring-out-a-baseline-is-important-for-science/ar-AA1WwQJo" target="_blank" style="font-size: 0.85rem; color: #4169E1;">How Often Do You Fart? This 'Smart Underwear' Can Keep Track</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.75rem; line-height: 1.4;">
-                        <p style="margin: 0;">"MSN Health covers the Smithsonian Magazine report on Smart Underwear research, explaining how the device helps establish baseline flatulence measurements for better understanding gut health."</p>
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Archive Note:</strong> MSN Health covers the Smithsonian Magazine report on Smart Underwear research, explaining how the device helps establish baseline flatulence measurements for better understanding gut health.
+                        </p>
                     </div>
                 </div>
                 
                 <!-- EurekAlert! -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🚨 EurekAlert!</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🚨 EurekAlert!</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 10, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">University of Maryland</p>
-                    <span class="archived">Archived</span>
+                    <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.eurekalert.org/news-releases/1115965" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Nationwide study seeks to map the full spectrum of human flatulence</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.eurekalert.org/news-releases/1115965" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Nationwide study seeks to map the full spectrum of human flatulence</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.75rem; line-height: 1.4;">
-                        <p style="margin: 0;">"A new nationwide study from the University of Maryland is recruiting volunteers to map the full spectrum of human flatulence using Smart Underwear technology."</p>
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Archive Note:</strong> A new nationwide study from the University of Maryland is recruiting volunteers to map the full spectrum of human flatulence using Smart Underwear technology.
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Earth.com -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌍 Earth.com</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌍 Earth.com</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Chrissy Sexton</p>
-                    <span class="archived">Archived</span>
+                    <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.earth.com/news/smart-underwear-measures-how-often-humans-fart-hoping-to-better-track-overall-gut-health/" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Smart Underwear Measures How Often Humans Fart, Hoping to Better Track Overall Gut Health</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.earth.com/news/smart-underwear-measures-how-often-humans-fart-hoping-to-better-track-overall-gut-health/" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Smart Underwear Measures How Often Humans Fart, Hoping to Better Track Overall Gut Health</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.75rem; line-height: 1.4;">
-                        <p style="margin: 0;">"The groundbreaking smart underwear technology aims to revolutionize how we monitor and understand gut health through continuous flatulence measurement."</p>
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Archive Note:</strong> The groundbreaking smart underwear technology aims to revolutionize how we monitor and understand gut health through continuous flatulence measurement.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -122,30 +145,34 @@
             <!-- Row 2: Hackaday + Knowridge + Medical Xpress -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- Hackaday -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🔧 Hackaday</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🔧 Hackaday</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 15, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Hackaday Staff</p>
-                    <span class="archived">Archived</span>
+                    <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://hackaday.com/2026/02/15/nobody-can-complain-when-you-fart-if-its-for-science/" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Nobody Can Complain When You Fart, If It's For Science!</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://hackaday.com/2026/02/15/nobody-can-complain-when-you-fart-if-its-for-science/" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Nobody Can Complain When You Fart, If It's For Science!</a></strong>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.75rem; line-height: 1.4;">
-                        <p style="margin: 0;">"US engineering and tech website brings Smart Underwear research to maker community with humorous take: 'Nobody can complain when you fart, if it's for science!'</p>
+                    <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
+                        <p style="margin: 0; font-size: 0.75rem; color: #0c5460;">
+                            <strong>Archive Note:</strong> US engineering and tech website brings Smart Underwear research to maker community with humorous take: 'Nobody can complain when you fart, if it's for science!'
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Knowridge -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🔬 Knowridge</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🔬 Knowridge</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 18, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">University of Maryland</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://knowridge.com/2026/02/scientists-invent-smart-underwear-that-tracks-your-farts-24-7/" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Scientists invent "smart underwear" that tracks your farts 24/7</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://knowridge.com/2026/02/scientists-invent-smart-underwear-that-tracks-your-farts-24-7/" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists invent "smart underwear" that tracks your farts 24/7</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -156,14 +183,15 @@
                 </div>
                 
                 <!-- Medical Xpress -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Medical Xpress</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Medical Xpress</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 10, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Bob Yirka</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://medicalxpress.com/news/2026-02-scientists-smart-underwear-human-flatulence.html" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Scientists create 'smart underwear' to measure human flatulence</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://medicalxpress.com/news/2026-02-scientists-smart-underwear-human-flatulence.html" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Scientists create 'smart underwear' to measure human flatulence</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -176,14 +204,15 @@
             <!-- Row 3: Ground News + The Brighter Side + YouTube -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- Ground News -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📰 Ground News</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📰 Ground News</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 16, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Ground News Staff</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://ground.news/article/researchers-develop-smart-underwear-to-track-a-wearers-farts_6cb298" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Researchers Develop 'Smart Underwear' to Track a Wearer's Farts</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://ground.news/article/researchers-develop-smart-underwear-to-track-a-wearers-farts_6cb298" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Researchers Develop 'Smart Underwear' to Track a Wearer's Farts</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -194,14 +223,15 @@
                 </div>
                 
                 <!-- The Brighter Side of News -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌟 The Brighter Side of News</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌟 The Brighter Side of News</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 11, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">The Brighter Side Staff</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.thebrighterside.news/post/smart-underwear-sheds-new-light-on-just-how-often-humans-pass-gas/" target="_blank" style="font-size: 0.85rem; color: #6c757d;">'Smart Underwear' sheds new light on just how often humans pass gas</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.thebrighterside.news/post/smart-underwear-sheds-new-light-on-just-how-often-humans-pass-gas/" target="_blank" style="font-size: 0.85rem; color: #4169E1;">'Smart Underwear' sheds new light on just how often humans pass gas</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -212,14 +242,15 @@
                 </div>
                 
                 <!-- YouTube Video -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📺 YouTube News</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">📺 YouTube News</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">YouTube News Segment</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.youtube.com/watch?v=Slwl1JlkLsg" target="_blank" style="font-size: 0.85rem; color: #6c757d;">Fart-tracking underwear, Amazon driver's wrong turn</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.youtube.com/watch?v=Slwl1JlkLsg" target="_blank" style="font-size: 0.85rem; color: #4169E1;">Fart-tracking underwear, Amazon driver's wrong turn</a></strong>
                     </div>
                     
                     <!-- Video Player -->
@@ -243,18 +274,15 @@
             <!-- Row 4: Quomi Healthcare Coverage -->
             <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
                 <!-- Quomi Healthcare Coverage -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Quomi Healthcare</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🏥 Quomi Healthcare</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Quomi Staff</p>
                     <span class="feature-archive">Feature Archive</span>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://quomi.com/information/first-wearable-device-measures-human-flatulence/" target="_blank" style="font-size: 0.85rem; color: #6c757d;">First wearable device measures human flatulence</a></strong>
-                    </div>
-                    
-                    <div style="font-style: italic; color: #333; font-size: 0.75rem; line-height: 1.4;">
-                        <p style="margin: 0;">"Researchers at the University of Maryland have introduced 'Smart Underwear,' a wearable device designed to objectively measure human flatulence. By establishing objective baselines for microbial fermentation, the Human Flatus Atlas aims to lay the groundwork for evaluating how diet, probiotics, and prebiotics influence microbiome function."</p>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://quomi.com/information/first-wearable-device-measures-human-flatulence/" target="_blank" style="font-size: 0.85rem; color: #4169E1;">First wearable device measures human flatulence</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -265,13 +293,14 @@
                 </div>
                 
                 <!-- TechTimes Coverage -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">💻 TechTimes</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">💻 TechTimes</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Glanze Patrick</p>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.techtimes.com/articles/314780/20260223/fitbit-farts-scientists-develop-smart-underwear-track-flatulence-digestive-health.htm" target="_blank" style="font-size: 0.85rem; color: #6c757d;">FitBit for Farts? Scientists Develop Smart Underwear to Track Flatulence and Digestive Health</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.techtimes.com/articles/314780/20260223/fitbit-farts-scientists-develop-smart-underwear-track-flatulence-digestive-health.htm" target="_blank" style="font-size: 0.85rem; color: #4169E1;">FitBit for Farts? Scientists Develop Smart Underwear to Track Flatulence and Digestive Health</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
@@ -282,13 +311,14 @@
                 </div>
                 
                 <!-- FutureParty Coverage -->
-                <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #6c757d;">
-                    <h3 style="color: #6c757d; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🚀 FutureParty</h3>
+                <div style="flex: 1; background: linear-gradient(135deg, #f8f9fa, #fff); padding: 25px; border-radius: 12px; border: 2px solid #4169E1; box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: rgba(65, 105, 225, 0.1); border-radius: 50%;"></div>
+                    <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🚀 FutureParty</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 24, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By David Vendrell</p>
                     
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #6c757d;">
-                        <strong><a href="https://www.futureparty.com/p/the-university-of-maryland-is-monitoring-your-farts" target="_blank" style="font-size: 0.85rem; color: #6c757d;">The University Of Maryland Is Monitoring Your Farts</a></strong>
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                        <strong><a href="https://www.futureparty.com/p/the-university-of-maryland-is-monitoring-your-farts" target="_blank" style="font-size: 0.85rem; color: #4169E1;">The University Of Maryland Is Monitoring Your Farts</a></strong>
                     </div>
                     
                     <div style="margin-top: 10px; padding: 10px; background-color: #d1ecf1; border-radius: 6px; border-left: 3px solid #17a2b8;">
