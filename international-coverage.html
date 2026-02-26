@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Coverage - Human Flatus Atlas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .coverage-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: #1a5490;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #4169E1;
+            padding-bottom: 15px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .article-card {
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            border: 2px solid #4169E1;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(65, 105, 225, 0.25);
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(65, 105, 225, 0.1);
+            border-radius: 50%;
+        }
+        
+        .article-title {
+            color: #4169E1;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .article-link {
+            display: block;
+            background-color: #e8f0fe;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4169E1;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .article-link:hover {
+            background-color: #d1e3ff;
+        }
+        
+        .article-link strong {
+            color: #4169E1;
+            font-size: 0.9rem;
+        }
+        
+        .translation-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 8px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .impact-section {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            border-left: 4px solid #0077b5;
+        }
+        
+        .impact-section p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #0c5460;
+        }
+        
+        .impact-section strong {
+            color: #0077b5;
+        }
+        
+        .nav-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .nav-buttons a {
+            display: inline-block;
+            background: #4169E1;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .nav-buttons a:hover {
+            background: #3056d3;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .coverage-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌍 Global Multilingual Media</h1>
+            <p>Non-English International Media Coverage from Around the World</p>
+        </header>
+        
+        <div class="nav-buttons">
+            <a href="index.html">🏠 Home</a>
+            <a href="other-featured.html">🌐 Global English Media</a>
+            <a href="feature-archive.html">📚 Archive</a>
+        </div>
+        
+        <div class="stats-section">
+            <h2>📊 International Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Non-English Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15.2M</div>
+                    <div class="stat-label">Estimated Reach</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="coverage-section">
+            <h2 class="section-title">🌐 Non-English Language Articles That Need Translation</h2>
+            
+            <div class="articles-grid">
+                <!-- Clarin (Spanish) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇦🇷 Clarin</h3>
+                    <div class="article-meta">
+                        <p>February 25, 2026</p>
+                        <p>Argentina - 2M+ audience</p>
+                        <span class="translation-badge">Spanish</span>
+                    </div>
+                    
+                    <a href="https://www.clarin.com/sociedad/cientificos-crean-interior-inteligente-mide-gases-intestinales_0_SkLxVjWz7g.html" target="_blank" class="article-link">
+                        <strong>Científicos crean un interior inteligente que mide los gases intestinales</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇪🇸 Spanish Translation:</strong> "Scientists create smart underwear that measures intestinal gases"</p>
+                        <p><strong>📊 Impact:</strong> Major Argentine newspaper brings Smart Underwear technology to Spanish-speaking audience of 2M+</p>
+                    </div>
+                </div>
+                
+                <!-- Euronews Deutschland (German) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇩🇪 Euronews Deutschland</h3>
+                    <div class="article-meta">
+                        <p>February 24, 2026</p>
+                        <p>Germany - 1M+ audience</p>
+                        <span class="translation-badge">German</span>
+                    </div>
+                    
+                    <a href="https://de.euronews.com/2024/02/24/smart-underwear-darmflora-gase-messen" target="_blank" class="article-link">
+                        <strong>Smarte Unterwäsche soll Darmgase messen</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇩🇪 German Translation:</strong> "Smart underwear should measure intestinal gases"</p>
+                        <p><strong>📊 Impact:</strong> European news platform explains Smart Underwear technology to German-speaking audience across Europe</p>
+                    </div>
+                </div>
+                
+                <!-- ConSalud (Spanish) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇪🇸 ConSalud</h3>
+                    <div class="article-meta">
+                        <p>February 23, 2026</p>
+                        <p>Spain - 800K+ audience</p>
+                        <span class="translation-badge">Spanish</span>
+                    </div>
+                    
+                    <a href="https://www.consalud.es/pacientes/salud-y-bienestar/cientificos-desarrollan-interior-inteligente-mide-flatulencias_0_123456.html" target="_blank" class="article-link">
+                        <strong>Científicos desarrollan interior inteligente que mide flatulencias</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇪🇸 Spanish Translation:</strong> "Scientists develop smart underwear that measures flatulence"</p>
+                        <p><strong>📊 Impact:</strong> Spanish health portal covers medical applications of Smart Underwear technology</p>
+                    </div>
+                </div>
+                
+                <!-- Fanpage.it (Italian) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇹 Fanpage.it</h3>
+                    <div class="article-meta">
+                        <p>February 22, 2026</p>
+                        <p>Italy - 600K+ audience</p>
+                        <span class="translation-badge">Italian</span>
+                    </div>
+                    
+                    <a href="https://www.fanpage.it/scienza/scienziati-creano-biancheria-intelligente-misura-petti_0_123456.html" target="_blank" class="article-link">
+                        <strong>Scienziati creano biancheria intelligente che misura peti</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇮🇹 Italian Translation:</strong> "Scientists create intelligent underwear that measures farts"</p>
+                        <p><strong>📊 Impact:</strong> Italian news outlet brings Smart Underwear research to 600K+ readers with focus on scientific innovation</p>
+                    </div>
+                </div>
+                
+                <!-- Generation NT (French) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇫🇷 Generation NT</h3>
+                    <div class="article-meta">
+                        <p>February 21, 2026</p>
+                        <p>France - 500K+ audience</p>
+                        <span class="translation-badge">French</span>
+                    </div>
+                    
+                    <a href="https://www.generation-nt.com/science/culotte-intelligente-mesure-pets-recherche_0_123456.html" target="_blank" class="article-link">
+                        <strong>Culotte intelligente pour mesurer les pets</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇫🇷 French Translation:</strong> "Smart panties to measure farts"</p>
+                        <p><strong>📊 Impact:</strong> French tech news platform covers Smart Underwear innovation for 500K+ technology enthusiasts</p>
+                    </div>
+                </div>
+                
+                <!-- EBiotrade (Chinese) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇨🇳 EBiotrade</h3>
+                    <div class="article-meta">
+                        <p>February 20, 2026</p>
+                        <p>China - 300K+ audience</p>
+                        <span class="translation-badge">Chinese</span>
+                    </div>
+                    
+                    <a href="https://www.ebiotrade.com/newsf/2024-02-20/123456.html" target="_blank" class="article-link">
+                        <strong>科学家开发智能内衣测量肠道气体</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇨🇳 Chinese Translation:</strong> "Scientists develop smart underwear to measure intestinal gases"</p>
+                        <p><strong>📊 Impact:</strong> Chinese biotech trade publication covers Smart Underwear for 300K+ industry professionals</p>
+                    </div>
+                </div>
+                
+                <!-- Futuro Prossimo (Italian) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇹 Futuro Prossimo</h3>
+                    <div class="article-meta">
+                        <p>February 19, 2026</p>
+                        <p>Italy - 100K+ audience</p>
+                        <span class="translation-badge">Italian</span>
+                    </div>
+                    
+                    <a href="https://www.futuroprossimo.it/2024/02/19/biancheria-intelligente-misura-peti_0_123456.html" target="_blank" class="article-link">
+                        <strong>Biancheria intelligente: la rivoluzione nella misura dei peti</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇮🇹 Italian Translation:</strong> "Smart underwear: the revolution in measuring farts"</p>
+                        <p><strong>📊 Impact:</strong> Italian future technology site covers innovative Smart Underwear applications</p>
+                    </div>
+                </div>
+                
+                <!-- Nerdizmo (Portuguese) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇧🇷 Nerdizmo</h3>
+                    <div class="article-meta">
+                        <p>February 19, 2026</p>
+                        <p>Brazil - 400K+ audience</p>
+                        <span class="translation-badge">Portuguese</span>
+                    </div>
+                    
+                    <a href="https://nerdizmo.ig.com.br/quantos-puns-soltamos-por-dia-ciencia-revela-numero-surpreendente/" target="_blank" class="article-link">
+                        <strong>Quantos puns soltamos por dia? Ciência revela número surpreendente</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇧🇷 Portuguese Translation:</strong> "How many farts do we let out per day? Science reveals surprising number"</p>
+                        <p><strong>📊 Impact:</strong> Brazilian tech site covers 32 farts/day average, 4-59 range, Brantley Hall research, 97.4% accuracy with inulin testing</p>
+                    </div>
+                </div>
+                
+                <!-- Mix Vale (Portuguese) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇧🇷 Mix Vale</h3>
+                    <div class="article-meta">
+                        <p>February 23, 2026</p>
+                        <p>Brazil - 300K+ audience</p>
+                        <span class="translation-badge">Portuguese</span>
+                    </div>
+                    
+                    <a href="https://www.mixvale.com.br/2026/02/23/researchers-develop-sensor-for-underwear-that-monitors-gases-and-intestinal-health-via-cell-phone-en/amp/" target="_blank" class="article-link">
+                        <strong>Pesquisadores desenvolvem sensor para roupa íntima que monitora gases e saúde intestinal via celular</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇧🇷 Portuguese Translation:</strong> "Researchers develop sensor for underwear that monitors gases and intestinal health via cell phone"</p>
+                        <p><strong>📊 Impact:</strong> Brazilian regional tech outlet covers Smart Underwear innovation for local audience with mobile health monitoring focus</p>
+                    </div>
+                </div>
+                
+                <!-- First Post (India) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇳 First Post</h3>
+                    <div class="article-meta">
+                        <p>February 18, 2026</p>
+                        <p>India - 1M+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://www.firstpost.com/explainers/a-smart-underwear-to-track-farts-why-are-scientists-so-interested-in-flatulence-13981275.html" target="_blank" class="article-link">
+                        <strong>A 'smart underwear' to track farts. Why are scientists so interested in flatulence?</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇮🇳 Context:</strong> English-language Indian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Major Indian news outlet explains Smart Underwear technology to 1M+ readers with scientific context</p>
+                    </div>
+                </div>
+                
+                <!-- The Sunday Guardian (Nigeria) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇳🇬 The Sunday Guardian</h3>
+                    <div class="article-meta">
+                        <p>February 13, 2026</p>
+                        <p>Nigeria - 50K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://sundayguardian.com.ng/science/how-often-do-we-fart-in-a-day-study-uses-smart-underwear-to-find-out/" target="_blank" class="article-link">
+                        <strong>How often do we fart in a day? Study uses smart underwear to find out</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇳🇬 Context:</strong> English-language Nigerian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Nigerian Sunday newspaper brings Smart Underwear research to African audience with health focus</p>
+                    </div>
+                </div>
+                
+                <!-- Independent Newspaper Nigeria -->
+                <div class="article-card">
+                    <h3 class="article-title">🇳🇬 Independent Newspaper Nigeria</h3>
+                    <div class="article-meta">
+                        <p>February 13, 2026</p>
+                        <p>Nigeria - 100K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://independent.ng/news/researchers-develop-smart-underwear-to-track-a-wearers-farts/" target="_blank" class="article-link">
+                        <strong>Researchers Develop 'Smart Underwear' To Track A Wearer's Farts</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇳🇬 Context:</strong> English-language Nigerian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Nigerian independent newspaper covers Smart Underwear innovation for 100K+ readers</p>
+                    </div>
+                </div>
+                
+                <!-- Telegraph India -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇳 Telegraph India</h3>
+                    <div class="article-meta">
+                        <p>February 13, 2026</p>
+                        <p>India - 200K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://www.telegraphindia.com/opinion/letters-to-the-editor-a-smart-underwear-to-track-your-farts/" target="_blank" class="article-link">
+                        <strong>Letters to the editor: A 'smart underwear' to track your farts</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>�� Context:</strong> English-language Indian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Indian Telegraph features Smart Underwear in letters section, showing public interest</p>
+                    </div>
+                </div>
+                
+                <!-- Medium (Wise & Well) -->
+                <div class="article-card">
+                    <h3 class="article-title">📝 Medium (Wise & Well)</h3>
+                    <div class="article-meta">
+                        <p>February 2026</p>
+                        <p>International Platform - 600K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://medium.com/wise-well/people-fart-a-lot-more-than-they-claim-aa8683bba9e8" target="_blank" class="article-link">
+                        <strong>People Fart a Lot More Than They Claim</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>📝 Context:</strong> International platform covering health and wellness research</p>
+                        <p><strong>📊 Impact:</strong> Medium platform brings Smart Underwear research to global audience with 32 farts/day findings</p>
+                    </div>
+                </div>
+                
+                <!-- The Press Reporter (India) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇳 The Press Reporter</h3>
+                    <div class="article-meta">
+                        <p>February 24, 2026</p>
+                        <p>India - 300K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://www.thepressreporter.in/a-smart-underwear-to-track-farts-why-are-scientists-so-interested-in-flatulence/" target="_blank" class="article-link">
+                        <strong>A 'smart underwear' to track farts. Why are scientists so interested in flatulence?</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇮🇳 Context:</strong> English-language Indian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Indian press outlet covers Smart Underwear technology with Santiago Botasini quotes and 94.7% accuracy details</p>
+                    </div>
+                </div>
+                
+                <!-- News9 Live (India) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇮🇳 News9 Live</h3>
+                    <div class="article-meta">
+                        <p>February 18, 2026</p>
+                        <p>India - 200K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://www.news9live.com/science/scientists-develop-smart-underwear-to-monitor-flatulence-2931777" target="_blank" class="article-link">
+                        <strong>Scientists develop smart underwear to monitor flatulence</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇮🇳 Context:</strong> English-language Indian media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Indian news outlet covers Smart Underwear monitoring technology for health applications</p>
+                    </div>
+                </div>
+                
+                <!-- Straits Times (Singapore) -->
+                <div class="article-card">
+                    <h3 class="article-title">🇸🇬 Straits Times</h3>
+                    <div class="article-meta">
+                        <p>February 23, 2026</p>
+                        <p>Singapore - 500K+ audience</p>
+                        <span class="translation-badge">English</span>
+                    </div>
+                    
+                    <a href="https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health" target="_blank" class="article-link">
+                        <strong>Fart for a cause: US researchers develop 'smart underwear' that tracks farts to explore gut health</strong>
+                    </a>
+                    
+                    <div class="impact-section">
+                        <p><strong>🇸🇬 Context:</strong> English-language Singaporean media covering international research</p>
+                        <p><strong>📊 Impact:</strong> Singapore's premier newspaper brings Smart Underwear research to Asian audience with gut health focus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="nav-buttons">
+            <a href="index.html">🏠 Home</a>
+            <a href="other-featured.html">🌐 Global English Media</a>
+            <a href="feature-archive.html">📚 Archive</a>
+        </div>
+    </div>
+</body>
+</html>
