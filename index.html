@@ -83,23 +83,85 @@
         <section class="story" id="featured-multimedia">
             <h2>📺 Featured Multimedia</h2>
             
-            <!-- Featured Video - Stephen Colbert -->
-            <div style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #4169E1;">
-                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 19, 2026</p>
-                <span class="badge">Smart Underwear at 3:04</span>
-                <div style="text-align: center; margin: 15px 0;">
-                    <a href="https://www.youtube.com/watch?v=d_aeNUgLGwM&t=1s" target="_blank" style="display: inline-block; position: relative; text-decoration: none;">
-                        <img src="knowledge-base/media/Colbert-Screen.png" 
-                             alt="Stephen Colbert - Sound of Science" 
-                             style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <div style="width: 0; height: 0; border-left: 20px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px;"></div>
+            <!-- Media Carousel -->
+            <div style="position: relative; background-color: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #4169E1; overflow: hidden;">
+                
+                <!-- Carousel Container -->
+                <div id="mediaCarousel" style="position: relative; height: 600px; overflow: hidden; border-radius: 8px;">
+                    
+                    <!-- Carousel Slides -->
+                    <div class="carousel-slides" style="display: flex; transition: transform 0.5s ease-in-out; height: 100%;">
+                        
+                        <!-- Slide 1: Stephen Colbert -->
+                        <div class="carousel-slide" style="min-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 19, 2026</p>
+                            <span class="badge">Smart Underwear at 3:04</span>
+                            <div style="text-align: center; margin: 15px 0;">
+                                <a href="https://www.youtube.com/watch?v=d_aeNUgLGwM&t=1s" target="_blank" style="display: inline-block; position: relative; text-decoration: none;">
+                                    <img src="knowledge-base/media/Colbert-Screen.png" 
+                                         alt="Stephen Colbert - Sound of Science" 
+                                         style="max-width: 100%; max-height: 450px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <div style="width: 0; height: 0; border-left: 30px solid white; border-top: 18px solid transparent; border-bottom: 18px solid transparent; margin-left: 10px;"></div>
+                                    </div>
+                                </a>
+                                <p style="margin-top: 20px; font-size: 1.1rem; color: #666;">
+                                    <strong>📺 Click to watch on YouTube</strong>
+                                </p>
+                            </div>
                         </div>
-                    </a>
-                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
-                        <strong>📺 Click to watch on YouTube</strong>
-                    </p>
+                        
+                        <!-- Slide 2: Fox 32 Chicago -->
+                        <div class="carousel-slide" style="min-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 11, 2026</p>
+                            <span class="badge">Chicago Station Interview</span>
+                            <div style="text-align: center; margin: 15px 0;">
+                                <a href="https://www.fox32chicago.com/news/smart-underwear-flatulence-research-university-maryland" target="_blank" style="display: inline-block; position: relative; text-decoration: none;">
+                                    <img src="knowledge-base/media/Fox32.png" 
+                                         alt="Fox 32 Chicago News" 
+                                         style="max-width: 100%; max-height: 450px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <div style="width: 0; height: 0; border-left: 30px solid white; border-top: 18px solid transparent; border-bottom: 18px solid transparent; margin-left: 10px;"></div>
+                                    </div>
+                                </a>
+                                <p style="margin-top: 20px; font-size: 1.1rem; color: #666;">
+                                    <strong>📺 Click to watch Fox 32 Chicago</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Howard Stern Show -->
+                        <div class="carousel-slide" style="min-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">February 19, 2026</p>
+                            <span class="badge">Entertainment Radio</span>
+                            <div style="text-align: center; margin: 15px 0;">
+                                <div style="max-width: 100%; max-height: 450px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); background: linear-gradient(135deg, #4169E1, #008b8b); display: flex; align-items: center; justify-content: center; color: white; padding: 80px;">
+                                    <div style="text-align: center;">
+                                        <h3 style="margin: 0; font-size: 4rem; margin-bottom: 20px;">🎭</h3>
+                                        <p style="margin: 0; font-size: 1.8rem; font-weight: bold;">The Howard Stern Show</p>
+                                        <p style="margin: 20px 0 0 0; font-size: 1.3rem;">8M+ Listeners</p>
+                                    </div>
+                                </div>
+                                <a href="https://insight.tveyes.com/public/share/8112477e-02ab-437b-8eb3-152c60a166f2/ec96c775-f82b-452c-9f72-fed9d6ad4d41" target="_blank" style="display: inline-block; margin-top: 25px; background-color: #4169E1; color: white; padding: 15px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+                                    🎧 Listen to Segment
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
+                
+                <!-- Carousel Controls -->
+                <button onclick="previousSlide()" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(65, 105, 225, 0.8); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; z-index: 10;">‹</button>
+                <button onclick="nextSlide()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(65, 105, 225, 0.8); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; z-index: 10;">›</button>
+                
+                <!-- Carousel Indicators -->
+                <div style="display: flex; justify-content: center; gap: 8px; margin-top: 15px;">
+                    <span class="carousel-indicator" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #4169E1; cursor: pointer; transition: opacity 0.3s;"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; cursor: pointer; transition: opacity 0.3s;"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; cursor: pointer; transition: opacity 0.3s;"></span>
+                </div>
+                
             </div>
         </section>
         
@@ -125,6 +187,68 @@
             </a>
         </div>
         
+        <!-- Media Coverage Summary Box -->
+        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #4169E1; border-left: 5px solid #4169E1;">
+            <h3 style="color: #4169E1; margin-top: 0; font-size: 1.3rem; font-weight: bold;">🌍 Global Media Impact Summary</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 15px;">
+                <!-- Total Coverage -->
+                <div style="text-align: center; background-color: #e8f0fe; padding: 10px; border-radius: 8px; border: 1px solid #4169E1;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #4169E1;">180+</div>
+                    <div style="font-size: 0.8rem; color: #666;">Media Outlets</div>
+                </div>
+                
+                <!-- Global Reach -->
+                <div style="text-align: center; background-color: #e8f0fe; padding: 10px; border-radius: 8px; border: 1px solid #4169E1;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #4169E1;">50M+</div>
+                    <div style="font-size: 0.8rem; color: #666;">Global Audience</div>
+                </div>
+                
+                <!-- Countries -->
+                <div style="text-align: center; background-color: #e8f0fe; padding: 10px; border-radius: 8px; border: 1px solid #4169E1;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #4169E1;">25+</div>
+                    <div style="font-size: 0.8rem; color: #666;">Countries</div>
+                </div>
+                
+                <!-- Languages -->
+                <div style="text-align: center; background-color: #e8f0fe; padding: 10px; border-radius: 8px; border: 1px solid #4169E1;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #4169E1;">12+</div>
+                    <div style="font-size: 0.8rem; color: #666;">Languages</div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <!-- Top Coverage -->
+                <div style="background-color: #fff; padding: 10px; border-radius: 8px; border-left: 3px solid #28a745;">
+                    <h4 style="color: #28a745; margin-top: 0; font-size: 1rem;">🏆 Top Coverage</h4>
+                    <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.8rem; color: #666;">
+                        <li>Wall Street Journal</li>
+                        <li>New Scientist</li>
+                        <li>Howard Stern Show</li>
+                        <li>BBC Newsround</li>
+                    </ul>
+                </div>
+                
+                <!-- National Capital Region Coverage -->
+                <div style="background-color: #fff; padding: 10px; border-radius: 8px; border-left: 3px solid #dc3545;">
+                    <h4 style="color: #dc3545; margin-top: 0; font-size: 1rem;">🎙️ National Capital Region Coverage</h4>
+                    <p style="margin: 5px 0; font-size: 0.8rem; color: #666;">
+                        <strong>Elliot in The Morning:</strong> 5 segments in 15 days<br>
+                        <strong>DC101 Reach:</strong> 500K+ listeners • Top 3 DMV show • #1 D.C. market podcast
+                    </p>
+                </div>
+                
+                <!-- International Impact -->
+                <div style="background-color: #fff; padding: 10px; border-radius: 8px; border-left: 3px solid #ffc107;">
+                    <h4 style="color: #ffc107; margin-top: 0; font-size: 1rem;">🌍 International Reach</h4>
+                    <p style="margin: 5px 0; font-size: 0.8rem; color: #666;">
+                        6 continents, 19 publications, 12+ languages<br>
+                        German, Spanish, Portuguese, French, Italian, Chinese, and more
+                    </p>
+                </div>
+            </div>
+        </div>
+        
         <section class="story" id="breaking-news">
             <h2>📰 Breaking News</h2>
             <!-- Wall Street Journal -->
@@ -147,20 +271,53 @@
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;">📰 Wall Street Journal</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 20, 2026</p>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Christopher Mims</p>
+                    <span class="badge" style="background: linear-gradient(45deg, #ff6b6b, #feca57); color: black;">2M+ Impact</span>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1" target="_blank" style="font-size: 1.1rem; color: #1a5490;">It's Called the 'Fitbit for Farts'—and It's No Joke</a></strong>
                         <p style="color: #666; font-size: 0.8rem; margin: 8px 0 0 0;">Scientists developing a new underwear-able hope to do for gastroenterology what the Apple Watch did for cardiology</p>
                     </div>
                     
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.wsj.com/tech/personal-tech/smart-underwear-gut-health-human-flatus-atlas-9ffa1bd7?mod=author_content_page_1_pos_1', '_blank')">
-                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"As I type this, a battery-powered computer tucked in my, er, swimsuit area is monitoring for my next flatus. Yes, flatus means 'fart.' Don't judge me—it's for science."</p>
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer; background-color: #f0f8ff; padding: 12px; border-radius: 6px; border-left: 3px solid #0077b5; transition: background-color 0.3s;" 
+                     onclick="window.open('https://www.linkedin.com/posts/christopher-mims-club_this-week-im-bringing-readers-a-most-unusual-activity-7430729850363056128-PA_K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACc-CEBt53_GY4et3igTGKBGAXiRhLd0ow', '_blank')"
+                     onmouseover="this.style.backgroundColor='#e8f0fe'; this.style.borderLeftColor='#005885';"
+                     onmouseout="this.style.backgroundColor='#f0f8ff'; this.style.borderLeftColor='#0077b5';">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #0077b5; text-decoration-style: dotted; font-weight: 500;">"As I type this, a battery-powered computer tucked in my, er, swimsuit area is monitoring for my next flatus. Yes, flatus means 'fart.' Don't judge me—it's for science."</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.8rem; color: #0077b5; text-align: center; font-weight: bold;">📱 Click to read Christopher Mims' LinkedIn post →</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- WELT German Breaking News -->
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
+                <!-- WELT Screenshot - Right Side Full Height -->
+                <div style="position: absolute; top: 20px; bottom: 20px; right: 20px; width: 45%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                    <img src="knowledge-base/media/GermanWelt-snippet.png" 
+                         alt="WELT German newspaper coverage" 
+                         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div style="background: linear-gradient(135deg, #1a5490, #4169E1); color: white; padding: 8px; text-align: center; font-size: 0.8rem; font-weight: bold;">
+                        🇩🇪 WELT - 2M+ Readers
+                    </div>
+                </div>
+                
+                <!-- Text Content - Left Side -->
+                <div style="padding-right: 50%;">
+                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;"><span style="font-size: 0.7rem; opacity: 0.8;">[DE]</span> WELT</h3>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 26, 2026</p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">Germany's Highest Circulation Newspaper <span class="badge" style="background: linear-gradient(45deg, #ff6b6b, #feca57); color: black;">2M+ Impact</span></p>
+                    
+                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
+                        <strong><a href="https://www.welt.de/gesundheit/article698d8c69f2a7a9e035a9f15e/darm-smarte-unterwaesche-misst-darmgase-forscher-entdecken-ueberraschende-werte.html" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Darm: Smarte Unterwäsche misst Darmgase – Forscher entdecken überraschende Werte</a></strong>
+                    </div>
+                    
+                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.welt.de/gesundheit/article698d8c69f2a7a9e035a9f15e/darm-smarte-unterwaesche-misst-darmgase-forscher-entdecken-ueberraschende-werte.html', '_blank')">
+                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"🇩🇪 German: Ein neuer Sensor analysiert die Gesundheit des Mikrobioms über die Gasbildung. In vorläufigen Versuchen fanden Forscher überraschende Werte: Sie stellen bisherige Annahmen infrage, wie viele Flatulenzen am Tag normal seien."</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.75rem; color: #666; font-style: italic;">🇺🇸 English: "A new sensor analyzes the health of the microbiome through gas formation. In preliminary trials, researchers found surprising values: They challenge previous assumptions about how many flatulences per day are normal."</p>
                     </div>
                     
                     <div style="margin-top: 15px; padding: 10px; background-color: #f0f8ff; border-radius: 6px; border-left: 3px solid #0077b5;">
-                        <p style="margin: 0; font-size: 0.8rem; color: #333;">
-                            <strong>🎥 Christopher Mims Video:</strong><br>
-                            <a href="https://www.linkedin.com/posts/christopher-mims-18051461584269632/" target="_blank" style="color: #0077b5; text-decoration: none; font-weight: bold;">"Fitbit for Farts" - WSJ Tech Column</a>
+                        <p style="margin: 0; font-size: 0.8rem; color: #0c5460;">
+                            <strong>🌍 German Media Powerhouse:</strong> WELT is Germany's highest-circulation newspaper with over 2 million readers. This premium placement reaches Germany's most influential audience with detailed scientific coverage of Smart Underwear breakthrough research.
                         </p>
                     </div>
                 </div>
@@ -185,7 +342,7 @@
                 <div style="padding-right: 50%;">
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;"><span style="font-size: 0.7rem; opacity: 0.8;">[🔬]</span> New Scientist</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 25, 2026</p>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Josie Ford (Feedback) <span class="badge">Science Magazine</span></p>
+                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Josie Ford (Feedback) <span class="badge">World's Most Popular Weekly Science Publication</span></p>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.newscientist.com/article/mg26935844-200-the-human-flatus-atlas-plans-to-measure-the-explosivity-of-farts/" target="_blank" style="font-size: 1.1rem; color: #1a5490;">The Human Flatus Atlas plans to measure the explosivity of farts</a></strong>
@@ -199,38 +356,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Straits Times Breaking News -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #1a5490; position: relative;">
-                <!-- Straits Times Screenshot - Right Side Full Height -->
-                <div style="position: absolute; top: 20px; bottom: 20px; right: 20px; width: 45%; border: 2px solid #ddd; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-                    <div style="background: #f8f9fa; padding: 4px; border-bottom: 1px solid #ddd; font-size: 0.6rem; color: #666; text-align: center; flex-shrink: 0;">
-                        📸 Straits Times
-                    </div>
-                    <div style="flex: 1; overflow: hidden; position: relative; cursor: pointer;" onclick="window.open('https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health', '_blank')">
-                        <img src="knowledge-base/media/The Straits Times.png" 
-                             alt="Straits Times website screenshot" 
-                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border: none; transition: transform 0.2s;"
-                             loading="lazy">
-                    </div>
-                </div>
-                
-                <!-- Text Content - Left Side -->
-                <div style="padding-right: 50%;">
-                    <h3 style="color: #1a5490; margin-top: 0; font-size: 1.5rem; font-weight: bold;"><span style="font-size: 0.7rem; opacity: 0.8;">[SG]</span> Straits Times</h3>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 23, 2026</p>
-                    <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">By Eileen Ng <span class="badge">Top English Newspaper in Singapore</span></p>
-                    
-                    <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #1a5490;">
-                        <strong><a href="https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health" target="_blank" style="font-size: 1.1rem; color: #1a5490;">Fart for a cause: US researchers develop 'smart underwear' that tracks farts to explore gut health</a></strong>
-                    </div>
-                    
-                    <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.5; text-align: left; cursor: pointer;" onclick="window.open('https://www.straitstimes.com/world/united-states/fart-for-a-cause-us-researchers-develop-smart-underwear-that-tracks-farts-to-explore-gut-health', '_blank')">
-                        <p style="margin: 0; text-decoration: underline; text-decoration-color: #4169E1; text-decoration-style: dotted;">"Wanted: People who fart. A 'smart underwear' to measure human flatulence has been created by scientists from University of Maryland in the United States, and they are looking for volunteers to wear it."</p>
-                    </div>
-                </div>
-            </div>
-            
                         
             <section class="story" id="major-features">
             <h2 style="color: #4169E1; border-left: 5px solid #00FFFF; padding-left: 15px; margin-top: 3rem;">📰 Major Features</h2>
@@ -247,6 +372,7 @@
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🔬 Scientific American</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 9, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Andrew Zaleski</p>
+                    <span class="badge" style="background: linear-gradient(45deg, #ff6b6b, #feca57); color: black;">America's Oldest Continuously Published Magazine (179 years)</span>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.scientificamerican.com/article/how-often-does-the-average-person-fart-scientists-built-a-device-to-find-out/" target="_blank" style="font-size: 0.8rem; color: #1a5490;">'Smart Underwear' could help unlock secrets of human flatulence</a></strong>
@@ -284,6 +410,7 @@
                     <h3 style="color: #1a5490; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🔬 The Microbiologist</h3>
                     <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 10, 2026</p>
                     <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">By Linda Stewart</p>
+                    <span class="badge" style="background: linear-gradient(45deg, #ff6b6b, #feca57); color: black;">Premier Microbiology Magazine</span>
                     
                     <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #1a5490;">
                         <strong><a href="https://www.the-microbiologist.com/news/scientists-create-smart-underwear-to-measure-human-flatulence/8048.article" target="_blank" style="font-size: 0.8rem; color: #1a5490;">Scientists create 'smart underwear' to measure human flatulence</a></strong>
@@ -414,5 +541,84 @@
             <!-- Navigation Buttons -->
         </div>
     </div>
+    
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slidesContainer = document.querySelector('.carousel-slides');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        
+        function updateCarousel() {
+            // Update slide position
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.style.background = index === currentSlide ? '#4169E1' : '#ccc';
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+        
+        // Auto-rotate carousel every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Pause auto-rotation on hover
+        const carousel = document.getElementById('mediaCarousel');
+        let autoRotateInterval = setInterval(nextSlide, 5000);
+        
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoRotateInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoRotateInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide(); // Swipe left - next slide
+            }
+            if (touchEndX > touchStartX + 50) {
+                previousSlide(); // Swipe right - previous slide
+            }
+        }
+    </script>
 </body>
 </html>
