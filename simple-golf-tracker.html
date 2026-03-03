@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Golf Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .positive { background-color: #10b981; color: white; }
+        .negative { background-color: #ef4444; color: white; }
+        .header { background-color: #1f2937; color: white; }
+        .hole-header { background-color: #374151; color: white; }
+        .shot-cell { min-width: 120px; text-align: center; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="header py-4 px-4">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Simple Golf Tracker</h1>
+            <p class="text-gray-300">Track + and - for every shot type</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Course Info -->
+        <div class="bg-white rounded-lg shadow p-4 mb-6">
+            <div class="grid grid-cols-4 gap-4">
+                <input type="text" id="courseName" placeholder="Course Name" class="px-3 py-2 border rounded">
+                <input type="date" id="roundDate" class="px-3 py-2 border rounded">
+                <button onclick="addHole()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Add Hole
+                </button>
+                <button onclick="finishRound()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Finish Round
+                </button>
+            </div>
+            <div class="mt-3 flex justify-between items-center">
+                <div class="text-sm text-gray-600">
+                    Current Hole: <span id="currentHole" class="font-bold">0</span> | 
+                    Total Holes: <span id="totalHoles" class="font-bold">0</span>
+                </div>
+                <div class="space-x-2">
+                    <button onclick="previousHole()" class="bg-gray-600 text-white px-3 py-1 rounded hover:bg-gray-700">
+                        ← Previous
+                    </button>
+                    <button onclick="nextHole()" class="bg-gray-600 text-white px-3 py-1 rounded hover:bg-gray-700">
+                        Next →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Holes Container -->
+        <div id="holesContainer" class="space-y-4">
+            <!-- Holes will be added here -->
+        </div>
+
+        <!-- Summary -->
+        <div class="bg-white rounded-lg shadow p-4 mt-6">
+            <h3 class="text-lg font-bold mb-4">Round Summary</h3>
+            <div id="summary" class="grid grid-cols-2 gap-4">
+                <!-- Summary will be calculated here -->
+            </div>
+            <button onclick="exportData()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Export CSV
+            </button>
+        </div>
+    </main>
+
+    <script>
+        let holes = [];
+        let holeCounter = 0;
+        let currentHoleIndex = 0;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('roundDate').valueAsDate = new Date();
+            loadSavedData();
+        });
+
+        function addHole() {
+            holeCounter++;
+            const holeNumber = holeCounter;
+            
+            const hole = {
+                number: holeNumber,
+                tee: { plus: 0, minus: 0 },
+                approach: { plus: 0, minus: 0 },
+                aroundGreen: { plus: 0, minus: 0 },
+                putting: { plus: 0, minus: 0 }
+            };
+            
+            holes.push(hole);
+            renderHole(hole);
+            currentHoleIndex = holes.length - 1;
+            updateNavigation();
+            saveData();
+            scrollToCurrentHole();
+        }
+
+        function renderHole(hole) {
+            const container = document.getElementById('holesContainer');
+            
+            // Remove existing hole if it exists
+            const existingHole = document.getElementById(`hole-${hole.number}`);
+            if (existingHole) {
+                existingHole.remove();
+            }
+            
+            const holeDiv = document.createElement('div');
+            holeDiv.className = 'bg-white rounded-lg shadow p-4';
+            holeDiv.id = `hole-${hole.number}`;
+            
+            holeDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-lg font-bold">Hole ${hole.number}</h3>
+                    <button onclick="removeHole(${hole.number})" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
+                        Remove
+                    </button>
+                </div>
+                
+                <!-- Header Row -->
+                <div class="grid grid-cols-4 gap-2 mb-2">
+                    <div class="hole-header p-2 rounded font-bold">Tee</div>
+                    <div class="hole-header p-2 rounded font-bold">Approach</div>
+                    <div class="hole-header p-2 rounded font-bold">Around Green</div>
+                    <div class="hole-header p-2 rounded font-bold">Putting</div>
+                </div>
+                
+                <!-- Plus Row -->
+                <div class="grid grid-cols-4 gap-2 mb-2">
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'tee', 'plus', 1)" class="positive w-full p-3 rounded hover:opacity-80">
+                            +${hole.tee.plus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'approach', 'plus', 1)" class="positive w-full p-3 rounded hover:opacity-80">
+                            +${hole.approach.plus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'aroundGreen', 'plus', 1)" class="positive w-full p-3 rounded hover:opacity-80">
+                            +${hole.aroundGreen.plus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'putting', 'plus', 1)" class="positive w-full p-3 rounded hover:opacity-80">
+                            +${hole.putting.plus}
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Minus Row -->
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'tee', 'minus', 1)" class="negative w-full p-3 rounded hover:opacity-80">
+                            -${hole.tee.minus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'approach', 'minus', 1)" class="negative w-full p-3 rounded hover:opacity-80">
+                            -${hole.approach.minus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'aroundGreen', 'minus', 1)" class="negative w-full p-3 rounded hover:opacity-80">
+                            -${hole.aroundGreen.minus}
+                        </button>
+                    </div>
+                    <div class="shot-cell">
+                        <button onclick="updateShot(${hole.number}, 'putting', 'minus', 1)" class="negative w-full p-3 rounded hover:opacity-80">
+                            -${hole.putting.minus}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(holeDiv);
+            updateSummary();
+        }
+
+        function updateShot(holeNumber, shotType, direction, amount) {
+            const hole = holes.find(h => h.number === holeNumber);
+            if (hole) {
+                hole[shotType][direction] += amount;
+                renderHole(hole);
+                saveData();
+            }
+        }
+
+        function removeHole(holeNumber) {
+            holes = holes.filter(h => h.number !== holeNumber);
+            const element = document.getElementById(`hole-${holeNumber}`);
+            if (element) {
+                element.remove();
+            }
+            updateNavigation();
+            updateSummary();
+            saveData();
+        }
+
+        function nextHole() {
+            if (currentHoleIndex < holes.length - 1) {
+                currentHoleIndex++;
+                scrollToCurrentHole();
+                updateNavigation();
+            } else {
+                // Auto-add next hole if at the end
+                if (holes.length > 0) {
+                    addHole();
+                }
+            }
+        }
+
+        function previousHole() {
+            if (currentHoleIndex > 0) {
+                currentHoleIndex--;
+                scrollToCurrentHole();
+                updateNavigation();
+            }
+        }
+
+        function scrollToCurrentHole() {
+            if (holes.length > 0 && currentHoleIndex >= 0) {
+                const currentHoleElement = document.getElementById(`hole-${holes[currentHoleIndex].number}`);
+                if (currentHoleElement) {
+                    currentHoleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Highlight current hole
+                    document.querySelectorAll('[id^="hole-"]').forEach(el => {
+                        el.classList.remove('ring-2', 'ring-blue-500');
+                    });
+                    currentHoleElement.classList.add('ring-2', 'ring-blue-500');
+                }
+            }
+        }
+
+        function updateNavigation() {
+            document.getElementById('currentHole').textContent = holes.length > 0 ? holes[currentHoleIndex].number : 0;
+            document.getElementById('totalHoles').textContent = holes.length;
+        }
+
+        function finishRound() {
+            if (holes.length === 0) {
+                alert('No holes recorded yet!');
+                return;
+            }
+
+            if (confirm(`Finish round with ${holes.length} holes? This will save your data and prepare for a new round.`)) {
+                // Export data automatically
+                exportData();
+                
+                // Clear for new round
+                if (confirm('Round exported! Start a new round?')) {
+                    holes = [];
+                    holeCounter = 0;
+                    currentHoleIndex = 0;
+                    document.getElementById('holesContainer').innerHTML = '';
+                    document.getElementById('courseName').value = '';
+                    document.getElementById('roundDate').valueAsDate = new Date();
+                    updateNavigation();
+                    updateSummary();
+                    localStorage.removeItem('golfTrackerData');
+                    alert('New round ready! Good luck!');
+                }
+            }
+        }
+
+        function updateSummary() {
+            const summary = document.getElementById('summary');
+            
+            if (holes.length === 0) {
+                summary.innerHTML = '<p class="text-gray-500">No holes recorded yet</p>';
+                return;
+            }
+
+            // Calculate totals
+            let totals = {
+                tee: { plus: 0, minus: 0 },
+                approach: { plus: 0, minus: 0 },
+                aroundGreen: { plus: 0, minus: 0 },
+                putting: { plus: 0, minus: 0 }
+            };
+
+            holes.forEach(hole => {
+                ['tee', 'approach', 'aroundGreen', 'putting'].forEach(shotType => {
+                    totals[shotType].plus += hole[shotType].plus;
+                    totals[shotType].minus += hole[shotType].minus;
+                });
+            });
+
+            summary.innerHTML = `
+                <div class="text-center">
+                    <h4 class="font-bold mb-2">Total Plus/Minus by Shot Type</h4>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div>
+                            <div class="positive p-2 rounded">Tee: +${totals.tee.plus}</div>
+                            <div class="negative p-2 rounded mt-1">Tee: -${totals.tee.minus}</div>
+                        </div>
+                        <div>
+                            <div class="positive p-2 rounded">Approach: +${totals.approach.plus}</div>
+                            <div class="negative p-2 rounded mt-1">Approach: -${totals.approach.minus}</div>
+                        </div>
+                        <div>
+                            <div class="positive p-2 rounded">Around: +${totals.aroundGreen.plus}</div>
+                            <div class="negative p-2 rounded mt-1">Around: -${totals.aroundGreen.minus}</div>
+                        </div>
+                        <div>
+                            <div class="positive p-2 rounded">Putting: +${totals.putting.plus}</div>
+                            <div class="negative p-2 rounded mt-1">Putting: -${totals.putting.minus}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <div class="text-lg font-bold">
+                        Overall: <span class="positive">+${(totals.tee.plus + totals.approach.plus + totals.aroundGreen.plus + totals.putting.plus)}</span> / 
+                        <span class="negative">-${(totals.tee.minus + totals.approach.minus + totals.aroundGreen.minus + totals.putting.minus)}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function saveData() {
+            const data = {
+                course: document.getElementById('courseName').value,
+                date: document.getElementById('roundDate').value,
+                holes: holes
+            };
+            localStorage.setItem('golfTrackerData', JSON.stringify(data));
+        }
+
+        function loadSavedData() {
+            const saved = localStorage.getItem('golfTrackerData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.getElementById('courseName').value = data.course || '';
+                document.getElementById('roundDate').value = data.date || '';
+                holes = data.holes || [];
+                
+                // Render existing holes
+                holes.forEach(hole => {
+                    renderHole(hole);
+                    holeCounter = Math.max(holeCounter, hole.number);
+                });
+                
+                updateSummary();
+            }
+        }
+
+        function exportData() {
+            if (holes.length === 0) {
+                alert('No data to export');
+                return;
+            }
+
+            let csv = 'Course,Date,Hole,Tee Plus,Tee Minus,Approach Plus,Approach Minus,Around Green Plus,Around Green Minus,Putting Plus,Putting Minus\n';
+            
+            holes.forEach(hole => {
+                csv += `"${document.getElementById('courseName').value}","${document.getElementById('roundDate').value}",${hole.number},${hole.tee.plus},${hole.tee.minus},${hole.approach.plus},${hole.approach.minus},${hole.aroundGreen.plus},${hole.aroundGreen.minus},${hole.putting.plus},${hole.putting.minus}\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `golf-tracker-${document.getElementById('roundDate').value || 'today'}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
