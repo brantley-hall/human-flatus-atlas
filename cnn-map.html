@@ -141,10 +141,10 @@
                     <!-- Stats Boxes at Top -->
                     <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 11px;">
                         <div style="background: linear-gradient(135deg, #ff6b6b, #ff5252); color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);">
-                            58 Stations
+                            59 Stations
                         </div>
                         <div style="background: linear-gradient(135deg, #ff6b6b, #ff5252); color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);">
-                            35 States
+                            35 States + Canada
                         </div>
                     </div>
                     
@@ -160,7 +160,7 @@
                         </div>
                         <div style="display: flex; align-items: center; gap: 4px;">
                             <div style="background-color: #ff6b6b; width: 9px; height: 9px; border-radius: 50%; border: 1px solid white;"></div>
-                            <span style="font-size: 0.65rem; color: #333;">With Local Twist (9)</span>
+                            <span style="font-size: 0.65rem; color: #333;">With Local Twist (10)</span>
                         </div>
                     </div>
                 </div>
@@ -236,6 +236,7 @@
             { name: "KOLO Reno", city: "Reno, NV", lat: 39.5296, lng: -119.8138, url: "https://www.kolotv.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             { name: "WCAX Vermont", city: "Burlington, VT", lat: 44.4759, lng: -73.2121, url: "https://www.wcax.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
             { name: "Valley News Live", city: "Fargo, ND", lat: 46.8772, lng: -96.7898, url: "https://www.valleynewslive.com/video/2026/02/18/smart-underwear-could-help-researchers-better-understand-human-farts/" },
+            { name: "CP24 Toronto", city: "Toronto, Canada", lat: 43.6532, lng: -79.3832, url: "https://www.cp24.com/news/world/2026/03/16/university-of-maryland-researchers-create-device-to-track-how-often-people-fart/" },
         ];
 
         // Initialize map centered on continental US, focused on main coverage area
@@ -283,7 +284,7 @@
                 <div style="font-family:Helvetica,sans-serif; min-width:180px;">
                     <strong style="color:${markerColor}; font-size:1rem;">📺 ${s.name}</strong><br>
                     <span style="color:#666; font-size:0.85rem;">${s.city}</span><br>
-                    <span style="color:#666; font-size:0.8rem;">58 TV stations · 35 states + D.C. · February 18, 2026 · ${stationType}</span><br><br>
+                    <span style="color:#666; font-size:0.8rem;">59 TV stations · 35 states + Canada + D.C. · February 18, 2026 · ${stationType}</span><br><br>
                     <a href="${s.url}" target="_blank" style="color:${markerColor}; font-weight:bold; font-size:0.85rem;">▶ Watch Story →</a>
                 </div>
             `);
