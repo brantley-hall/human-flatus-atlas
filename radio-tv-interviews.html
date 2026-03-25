@@ -516,10 +516,10 @@
             </div>
         </div>
         
-        <!-- Radio Interviews - 2 Columns -->
-        <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+        <!-- Radio Interviews - 3 Columns -->
+        <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px; flex-wrap: wrap;">
             <!-- The Howard Stern Show -->
-            <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #4169E1;">
+            <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #4169E1;">
                 <h3 style="color: #4169E1; margin-top: 0; font-size: 1.4rem; font-weight: bold;">🎭 The Howard Stern Show</h3>
                 <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 19, 2026</p>
                 <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">Entertainment Radio • SiriusXM</p>
@@ -534,7 +534,7 @@
             </div>
             
             <!-- CBC "As It Happens" -->
-            <div style="flex: 1; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #4169E1;">
+            <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #4169E1;">
                 <h3 style="color: #4169E1; margin-top: 0; font-size: 1.4rem; font-weight: bold;"><span style="font-size: 0.7rem; opacity: 0.8;">[CA]</span> CBC "As It Happens"</h3>
                 <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">February 13, 2026</p>
                 <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">National Radio • Canada</p>
@@ -544,14 +544,31 @@
                 </div>
                 
                 <div style="margin: 10px 0;">
-                    <audio controls style="width: 100%;">
-                        <source src="knowledge-base/media/CBC-Interview.mov" type="video/mp4">
-                        Your browser does not support the audio element.
-                    </audio>
+                    <div class="audio-player">
+                        <audio controls style="width: 100%;">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 </div>
                 
                 <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
                     <p style="margin: 0;">"National Coverage: Canada's national radio program covers the University of Maryland's Smart Underwear research, bringing international attention to the groundbreaking study."</p>
+                </div>
+            </div>
+            
+            <!-- Radio New Zealand -->
+            <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 8px; border: 2px solid #4169E1;">
+                <h3 style="color: #4169E1; margin-top: 0; font-size: 1.4rem; font-weight: bold;"><span style="font-size: 0.7rem; opacity: 0.8;">[NZ]</span> RNZ "Nine To Noon"</h3>
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 5px;">March 25, 2026</p>
+                <p style="color: #666; font-size: 0.7rem; margin-bottom: 10px;">National Radio • New Zealand</p>
+                
+                <div style="background-color: #e8f0fe; padding: 10px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #4169E1;">
+                    <strong><a href="https://www.rnz.co.nz/national/programmes/ninetonoon/audio/2019028375/science-sleeping-sickness-drug-smart-underwear" target="_blank" style="font-size: 0.8rem; color: #4169E1;">Science: Sleeping sickness drug + 'smart underwear'</a></strong>
+                </div>
+                
+                <div style="font-style: italic; color: #333; font-size: 0.8rem; line-height: 1.4;">
+                    <p style="margin: 0;">"Academic Authority: Professor Allan Blackman (Auckland University of Technology) explains Smart Underwear science to New Zealand audiences, emphasizing clinical applications for vital patient information."</p>
                 </div>
             </div>
         </div>

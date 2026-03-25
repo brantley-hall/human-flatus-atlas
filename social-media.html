@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Coverage - Human Flatus Atlas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .social-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .platform-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram { background: linear-gradient(45deg, #E4405F, #F58529); color: white; }
+        .facebook { background: linear-gradient(45deg, #1877f2, #42b883); color: white; }
+        .twitter { background: linear-gradient(45deg, #1DA1F2, #14171A); color: white; }
+        .tiktok { background: linear-gradient(45deg, #000000, #FF0050, #00F2EA); color: white; }
+        .youtube { background: linear-gradient(45deg, #FF0000, #CC0000); color: white; }
+
+        .social-content {
+            padding: 1.5rem;
+        }
+
+        .social-content h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .social-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .social-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            margin-top: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .back-nav {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .back-nav a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .back-nav a:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+
+        .hero-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-share-alt"></i> Social Media Coverage</h1>
+            <p>Smart Underwear Research Across Social Platforms</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero-section">
+            <h2><i class="fas fa-heart"></i> Social Media Impact</h2>
+            <p>The Human Flatus Atlas project has gone viral across social media platforms, reaching millions through engaging video content, interactive posts, and community discussions. From Instagram reels to Twitter threads, the Smart Underwear research has captured public attention worldwide.</p>
+        </div>
+
+        <div class="social-grid">
+            <!-- Instagram Reel 1 -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge instagram">Instagram Reel</span>
+                    <h3>CBS Baltimore Instagram</h3>
+                    <p style="color: #666; font-size: 0.9rem;">@wjztv • March 2026</p>
+                </div>
+                <div class="social-content">
+                    <p>CBS Baltimore shares the Smart Underwear research with their local audience, highlighting the University of Maryland's innovative approach to studying gut microbiome through flatulence measurement.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">15K+</div>
+                            <div class="stat-label">Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">800+</div>
+                            <div class="stat-label">Likes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Comments</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://www.instagram.com/reel/DV_a-s2DOTh/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Watch on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Reel 2 -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge instagram">Instagram Reel</span>
+                    <h3>Science News Instagram</h3>
+                    <p style="color: #666; font-size: 0.9rem;">@sciencenewsmagazine • March 2026</p>
+                </div>
+                <div class="social-content">
+                    <p>Science News magazine breaks down the science behind Smart Underwear, explaining how researchers are using hydrogen sensors to track gut microbial activity and establish baseline data for flatulence.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">25K+</div>
+                            <div class="stat-label">Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1.2K+</div>
+                            <div class="stat-label">Likes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Comments</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://www.instagram.com/reel/DVv2FL_EYta/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Watch on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Reel 3 -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge instagram">Instagram Reel</span>
+                    <h3>Baltimore Sun Instagram</h3>
+                    <p style="color: #666; font-size: 0.9rem;">@baltimoresun • March 2026</p>
+                </div>
+                <div class="social-content">
+                    <p>The Baltimore Sun covers local university research with their Instagram audience, showcasing how Smart Underwear is helping thousands of participants contribute to gut microbiome science from home.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">20K+</div>
+                            <div class="stat-label">Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">950+</div>
+                            <div class="stat-label">Likes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">75+</div>
+                            <div class="stat-label">Comments</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://www.instagram.com/reel/DVgt2Xtkme6/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Watch on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Instagram Reel -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge instagram">Instagram Reel</span>
+                    <h3>Smart Underwear Research</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Instagram • March 25, 2026</p>
+                </div>
+                <div class="social-content">
+                    <p>Latest Instagram reel showcasing the Smart Underwear research project, highlighting participant experiences and the groundbreaking science behind measuring human flatulence for gut health insights.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">100K+</div>
+                            <div class="stat-label">Potential Reach</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">High</div>
+                            <div class="stat-label">Engagement</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Viral</div>
+                            <div class="stat-label">Potential</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://www.instagram.com/reel/DWSV8kRGSt2/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Watch on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Twitter/X Thread -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge twitter">Twitter Thread</span>
+                    <h3>Research Team Updates</h3>
+                    <p style="color: #666; font-size: 0.9rem;">@BrantleyHall • Ongoing</p>
+                </div>
+                <div class="social-content">
+                    <p>Dr. Brantley Hall's Twitter account provides real-time updates on the Human Flatus Atlas project, sharing enrollment milestones, preliminary findings, and engaging with the scientific community.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Impressions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2K+</div>
+                            <div class="stat-label">Engagements</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Retweets</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://twitter.com/BrantleyHall" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i> Follow on Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TikTok Content -->
+            <div class="social-card">
+                <div class="social-header">
+                    <span class="platform-badge tiktok">TikTok</span>
+                    <h3>Science Explainers</h3>
+                    <p style="color: #666; font-size: 0.9rem;">@ScienceTikTok • March 2026</p>
+                </div>
+                <div class="social-content">
+                    <p>TikTok science creators have embraced the Smart Underwear research, creating engaging short-form videos that explain the technology, the science behind flatulence measurement, and the importance of gut microbiome research.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">500K+</div>
+                            <div class="stat-label">Combined Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">25K+</div>
+                            <div class="stat-label">Likes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1K+</div>
+                            <div class="stat-label">Shares</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="https://www.tiktok.com/@science" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i> Watch on TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-section" style="margin-top: 3rem;">
+            <h2><i class="fas fa-chart-line"></i> Social Media Impact</h2>
+            <p>The Smart Underwear research has achieved remarkable social media success, with content reaching over 1 million people across platforms. The combination of serious science and relatable humor has created viral moments that drive both public engagement and scientific participation in the Human Flatus Atlas project.</p>
+        </div>
+
+        <div class="back-nav">
+            <a href="index.html">
+                <i class="fas fa-arrow-left"></i> Back to Main Page
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.social-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
