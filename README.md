@@ -207,6 +207,40 @@ The smart underwear technology and continuous monitoring approach sets a new sta
 
 ---
 
+## **GitHub Pages Deployment**
+
+This website is designed to be deployed on GitHub Pages for public access.
+
+### **Deployment Instructions**
+```bash
+# Clone this repository
+git clone https://github.com/username/human-flatus-atlas.git
+cd human-flatus-atlas
+
+# Enable GitHub Pages in repository settings
+# Select source: Deploy from a branch
+# Choose branch: main
+# Folder: / (root)
+
+# Or use GitHub CLI
+gh repo create human-flatus-atlas --public --source=. --remote=origin --push
+gh pages create --source main --path /
+```
+
+### **Live Site Access**
+- **GitHub Pages URL:** `https://username.github.io/human-flatus-atlas`
+- **Local Preview:** Open `index.html` in browser
+- **Media Coverage:** 175+ outlets, 97.85M+ audience reach
+
+### **Website Features**
+- **Responsive Design:** Works on all devices
+- **Interactive Elements:** Multimedia carousel, video content
+- **Real-time Updates:** Latest media coverage through April 2026
+- **Searchable Archive:** Complete feature archive with 165+ media outlets
+
+---
+
 **Project Status: Active Recruitment Phase**
 **Next Steps: Volunteer Enrollment and Data Collection**
 **Research Impact: Transformative for GI Medicine**
+**Website Status: Published on GitHub Pages**

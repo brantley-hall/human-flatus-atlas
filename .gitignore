@@ -1,0 +1,16 @@
+# Ignore common development files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+node_modules/
+.vscode/
+.idea/
+
+# Ignore backup files
+*-backup.html
+*.bak
+
+# Ignore local server files
+serve.html
+local-preview.html
