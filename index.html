@@ -16,6 +16,21 @@
             margin-bottom: 27px;
         }
         
+        .header-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr) 200px; align-items: center; gap: 24px; max-width: 1400px; margin: 0 auto; }
+        .header-copy { grid-column: 2; grid-row: 1; }
+        .header-snippet { display: flex; flex-direction: column; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+        .header-snippet:first-of-type { grid-column: 1; grid-row: 1; }
+        .header-snippet:last-of-type { grid-column: 3; grid-row: 1; }
+        .header-snippet:hover { transform: scale(1.03); }
+        .header-snippet-frame { width: 100%; aspect-ratio: 269 / 154; box-sizing: border-box; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid #4169E1; }
+        .header-snippet-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        @media (max-width: 900px) {
+            .header-layout { grid-template-columns: repeat(2, minmax(0, 200px)); justify-content: center; gap: 24px; }
+            .header-copy { grid-column: 1 / -1; grid-row: 1; }
+            .header-snippet:first-of-type { grid-column: 1; grid-row: 2; }
+            .header-snippet:last-of-type { grid-column: 2; grid-row: 2; }
+            .header-copy h1 { font-size: 2rem; }
+        }
         header h1 { font-size: 2.5rem; margin-bottom: 0.3rem; }
         header p { font-size: 1.6rem; font-weight: 600; margin: 0; margin-bottom: 0.5rem; }
         
@@ -39,37 +54,32 @@
 </head>
 <body>
     <header>
-        <div style="position: relative; text-align: center;">
-            <div>
+        <div class="header-layout">
+            <div class="header-copy">
                 <h1>Human Flatus Atlas and Smart Underwear</h1>
                 <p style="font-size: 1.4rem; font-weight: 600;">Rollout Publicity</p>
                 <span class="badge" style="background-color: #ff6b6b; color: white; padding: 8px 16px; border-radius: 20px; font-size: 1.1rem; font-weight: bold; display: inline-block; margin-top: 10px;">10,000+ applications received!</span>
             </div>
             
-            <!-- Human Flatus Atlas Snippet - Positioned to the left (proportional) -->
+            <!-- Human Flatus Atlas snippet -->
             <a href="https://www.flatus.info/" 
                target="_blank" 
-               style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;"
-               onmouseover="this.style.transform='translateY(-50%) scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(65, 105, 225, 0.4)';"
-               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.boxShadow='none';">
-                <div style="width: 269px; height: 154px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid #4169E1;">
+               class="header-snippet">
+                <div class="header-snippet-frame">
                     <img src="knowledge-base/media/HumanFlatusAtlas-snippet.png" 
                          alt="Human Flatus Atlas website snippet" 
-                         style="width: 269px; height: 154px; object-fit: cover; object-position: 0% 50%; display: block; border-radius: 10px;">
+                         style="object-position: 0% 50%;">
                 </div>
                 <span style="background: linear-gradient(135deg, #4169E1, #008b8b); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">🌐 Visit Atlas</span>
             </a>
             
-            <!-- Biosensors Paper Snippet - Positioned to the right (proportional) -->
+            <!-- Biosensors Paper snippet -->
             <a href="https://www.sciencedirect.com/science/article/pii/S2590137025001268" 
                target="_blank" 
-               style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;"
-               onmouseover="this.style.transform='translateY(-50%) scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(65, 105, 225, 0.4)';"
-               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.boxShadow='none';">
-                <div style="width: 269px; height: 154px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid #4169E1;">
+               class="header-snippet">
+                <div class="header-snippet-frame">
                     <img src="knowledge-base/media/BiosensorsandBioelectronics-Snippet.png" 
-                         alt="Biosensors and Bioelectronics paper snippet" 
-                         style="width: 269px; height: 154px; object-fit: cover; display: block;">
+                         alt="Biosensors and Bioelectronics paper snippet" >
                 </div>
                 <span style="background: linear-gradient(135deg, #4169E1, #008b8b); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">📄 Read Paper</span>
             </a>
