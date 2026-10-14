@@ -1,67 +1,28 @@
-# GitHub Publishing Instructions
+# Publish this repository with GitHub Pages
 
-## Quick Setup
+This repository is `brantley-hall/human-flatus-atlas`. It is a static site: the homepage and its supporting pages and assets are already in the repository.
 
-### 1. Create GitHub Repository
-```bash
-# Using GitHub CLI (recommended)
-gh repo create human-flatus-atlas --public --source=. --remote=origin --push
+## Expected site address
 
-# Or manually:
-# 1. Go to github.com and create new repository "human-flatus-atlas"
-# 2. Add remote: git remote add origin https://github.com/YOUR_USERNAME/human-flatus-atlas.git
-# 3. Push: git push -u origin main
-```
+If GitHub Pages is enabled and no custom domain is configured, the project site address is:
 
-### 2. Enable GitHub Pages
-1. Go to repository settings on GitHub
-2. Scroll to "Pages" section
-3. Source: Deploy from a branch
-4. Branch: main
-5. Folder: / (root)
-6. Click Save
+`https://brantley-hall.github.io/human-flatus-atlas/`
 
-### 3. Access Your Live Site
-- URL: https://YOUR_USERNAME.github.io/human-flatus-atlas
-- Automatic deployment within 1-2 minutes
+## Configure or check GitHub Pages
 
-## Current Status
+1. Open the repository's **Settings** tab, then choose **Pages**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Select branch **main** and folder **/(root)**, then save.
+4. Check the Pages settings or the **Actions** tab for the deployment result.
+5. When deployment succeeds, open the site address above and check the homepage, archive, and media pages.
 
-### Repository Ready
-- [x] Git repository initialized
-- [x] All files committed
-- [x] README.md with deployment instructions
-- [x] .gitignore configured
-- [x] GitHub Pages compatible structure
+The repository is public and its default branch is `main`. The publish source should be the repository root, where `index.html` and the supporting files are located. No separate build command is required. If a custom domain is configured in Pages, use the address shown in repository settings instead.
 
-### Website Features
-- [x] Responsive design for all devices
-- [x] Interactive multimedia carousel
-- [x] 175+ media outlets coverage
-- [x] 97.85M+ global audience reach
-- [x] Latest coverage through April 10, 2026
-- [x] Complete feature archive (165+ outlets)
+## Repository pages to check
 
-### Files Ready for Deployment
-- `index.html` - Main page (131KB)
-- `radio-tv-interviews.html` - Multimedia page
-- `feature-archive.html` - Archive page
-- `knowledge-base/` - Media assets and articles
-- All supporting CSS and JavaScript
+- `index.html` — homepage
+- `feature-archive.html` — media feature archive
+- `radio-tv-interviews.html` — radio and television interviews
+- `knowledge-base/` — supporting images and other media assets
 
-## Next Steps
-
-1. **Create the GitHub repository** using the commands above
-2. **Enable GitHub Pages** in repository settings
-3. **Share the live URL** with your audience
-4. **Monitor deployment** in GitHub Actions tab
-
-## Support
-
-For issues:
-- Check GitHub Pages documentation
-- Verify repository is public
-- Ensure main branch is selected as source
-- Check file permissions and naming
-
-The website is fully optimized for GitHub Pages deployment and should work immediately after enabling Pages.
+GitHub Pages changes can take several minutes to appear. Confirm that the Pages deployment has completed before treating a cached or not-yet-published page as the current version.
